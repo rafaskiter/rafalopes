@@ -1,39 +1,48 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Tokens de tema — paleta premium minimalista (quase-preto / branco) *
+ * Tokens de tema — base no design system "cohere" (getdesign.md).     *
+ * Canvas branco, bandas escuras verde-profundo, acento coral.         *
  * ------------------------------------------------------------------ */
 :root {
-  --bg: #f6f5f2; /* off-white quente */
+  --bg: #ffffff; /* canvas */
   --bg-elevated: #ffffff;
-  --ink: #0a0a0a; /* quase-preto */
-  --ink-soft: #1a1a1a;
-  --muted: #6b6b66;
-  --line: #e3e1db;
-  --accent: #c8501e; /* terracota discreto */
-  --on-dark: #f6f5f2;
-  --muted-on-dark: #9b9b94;
-  --line-on-dark: rgba(255, 255, 255, 0.12);
+  --surface: #eeece7; /* soft-stone (superfície alternativa quente) */
+  --ink: #17171c; /* near-black: títulos, bandas escuras, botões */
+  --ink-soft: #212121; /* corpo de texto */
+  --muted: #616161; /* texto secundário */
+  --faint: #93939f; /* metadados / eyebrows */
+  --line: #d9d9dd; /* hairline */
+  --accent: #ff7759; /* coral */
+  --green: #003c33; /* deep enterprise green (banda escura) */
+  --navy: #071829;
+  --on-dark: #ffffff;
+  --muted-on-dark: rgba(255, 255, 255, 0.62);
+  --line-on-dark: rgba(255, 255, 255, 0.14);
 
-  --radius: 14px;
+  --radius: 22px; /* raio de mídia assinatura (cohere lg) */
+
   --container: 80rem; /* 1280px */
-  --section-y: clamp(5rem, 12vh, 10rem);
+  --section-y: clamp(4.5rem, 11vh, 9rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-green: var(--green);
   --color-on-dark: var(--on-dark);
   --color-muted-on-dark: var(--muted-on-dark);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-display: var(--font-corben), ui-serif, Georgia, serif;
 
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 8px);
@@ -64,7 +73,7 @@
 
   body {
     background-color: var(--bg);
-    color: var(--ink);
+    color: var(--ink-soft);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv01";
   }

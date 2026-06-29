@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Corben } from "next/font/google";
 import "./globals.css";
 import { settings, seo } from "@/content/settings";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
@@ -12,11 +12,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const instrument = Instrument_Serif({
+const corben = Corben({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
+  weight: ["400", "700"],
+  variable: "--font-corben",
   display: "swap",
 });
 
@@ -52,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${instrument.variable}`}
+      className={`${inter.variable} ${corben.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-bg text-ink antialiased">

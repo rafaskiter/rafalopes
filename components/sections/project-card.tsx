@@ -31,19 +31,19 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    <div className="sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6">
+    <div className="sticky top-0 flex h-[100svh] items-center justify-center px-4 sm:px-6">
       <motion.div
         style={{
           backgroundColor: project.color,
           color: ink,
           scale,
-          top: `calc(8vh + ${index * 26}px)`,
+          top: `calc(7vh + ${index * 24}px)`,
         }}
-        className="relative w-full max-w-6xl origin-top overflow-hidden rounded-[1.75rem] shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
+        className="relative w-full max-w-6xl origin-top overflow-hidden rounded-3xl shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
       >
         <Link
           href={`/projetos/${project.slug}`}
-          className="group grid h-full gap-6 p-7 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14"
+          className="group grid h-full gap-5 p-6 sm:gap-8 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14"
           aria-label={`Ver projeto ${project.title}`}
         >
           {/* Coluna de texto */}
@@ -72,20 +72,20 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+              <h3 className="font-display text-[2.25rem] leading-[1] tracking-tight sm:text-6xl lg:text-7xl">
                 {project.title}
               </h3>
-              <p className="mt-5 max-w-md text-pretty text-base sm:text-lg" style={{ color: muted }}>
+              <p className="mt-4 max-w-md text-pretty text-sm sm:mt-5 sm:text-lg" style={{ color: muted }}>
                 {project.summary}
               </p>
-              <p className="mt-6 text-sm" style={{ color: muted }}>
+              <p className="mt-4 text-sm sm:mt-6" style={{ color: muted }}>
                 {project.category} · {project.year}
               </p>
             </div>
           </div>
 
           {/* Coluna de imagem com zoom no hover */}
-          <div className="relative min-h-[240px] overflow-hidden rounded-2xl">
+          <div className="relative min-h-[180px] overflow-hidden rounded-2xl sm:min-h-[240px]">
             <motion.div
               className="absolute inset-0"
               whileHover={{ scale: 1.05 }}

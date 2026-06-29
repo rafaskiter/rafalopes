@@ -12,16 +12,20 @@ import {
 import { galleryItems } from "@/content/projects";
 import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
 
-/** Posições espalhadas (em %), profundidade do parallax e tamanho. */
+/**
+ * Posições espalhadas (em %), profundidade do parallax e tamanho.
+ * `mobile: true` marca as peças que aparecem também em telas pequenas
+ * (cantos), evitando poluir o centro onde fica o texto.
+ */
 const layout = [
-  { x: 8, y: 16, w: 150, depth: 1.4, ratio: "3/4" as const },
-  { x: 77, y: 12, w: 172, depth: 1.0, ratio: "4/3" as const },
-  { x: 63, y: 60, w: 192, depth: 1.7, ratio: "1/1" as const },
-  { x: 17, y: 63, w: 160, depth: 1.2, ratio: "4/3" as const },
-  { x: 85, y: 45, w: 132, depth: 2.1, ratio: "3/4" as const },
-  { x: 39, y: 6, w: 120, depth: 0.8, ratio: "1/1" as const },
-  { x: 1, y: 41, w: 122, depth: 2.3, ratio: "1/1" as const },
-  { x: 47, y: 73, w: 142, depth: 1.5, ratio: "4/3" as const },
+  { x: 6, y: 15, w: 150, depth: 1.4, ratio: "3/4" as const, mobile: true },
+  { x: 78, y: 11, w: 172, depth: 1.0, ratio: "4/3" as const, mobile: true },
+  { x: 64, y: 61, w: 192, depth: 1.7, ratio: "1/1" as const, mobile: true },
+  { x: 14, y: 64, w: 160, depth: 1.2, ratio: "4/3" as const, mobile: true },
+  { x: 86, y: 45, w: 132, depth: 2.1, ratio: "3/4" as const, mobile: false },
+  { x: 39, y: 5, w: 120, depth: 0.8, ratio: "1/1" as const, mobile: false },
+  { x: 0, y: 41, w: 122, depth: 2.3, ratio: "1/1" as const, mobile: false },
+  { x: 48, y: 74, w: 142, depth: 1.5, ratio: "4/3" as const, mobile: false },
 ];
 
 /** Amplitude (px) do deslocamento por unidade de profundidade. */
@@ -48,7 +52,7 @@ export function FloatingGallery() {
 
   return (
     <div
-      className="pointer-events-none absolute inset-0 hidden md:block"
+      className="pointer-events-none absolute inset-0"
       aria-hidden="true"
     >
       {layout.map((pos, i) => {
@@ -98,8 +102,15 @@ function FloatingItem({
 
   return (
     <motion.div
-      className="absolute"
-      style={{ left: `${pos.x}%`, top: `${pos.y}%`, width: pos.w, x: tx, y: ty, rotate }}
+      className={pos.mobile ? "absolute" : "absolute hidden sm:block"}
+      style={{
+        left: `${pos.x}%`,
+        top: `${pos.y}%`,
+        width: `clamp(72px, 16vw, ${pos.w}px)`,
+        x: tx,
+        y: ty,
+        rotate,
+      }}
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1, delay: 0.4 + index * 0.08, ease: [0.16, 1, 0.3, 1] }}

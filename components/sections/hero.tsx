@@ -6,7 +6,7 @@ import { FloatingGallery } from "@/components/hero/floating-gallery";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-[var(--header-h,4.5rem)]">
+    <section className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 pt-[var(--header-h,4.5rem)] sm:px-6">
       <FloatingGallery />
 
       <div className="relative z-10 flex flex-col items-center text-center">
@@ -14,12 +14,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-2 text-sm uppercase tracking-[0.3em] text-muted"
+          className="mb-2 text-xs uppercase tracking-[0.3em] text-faint sm:text-sm"
         >
           {settings.fullName}
         </motion.p>
 
-        <h1 className="font-display text-[clamp(5rem,26vw,22rem)] leading-[0.82] tracking-tight">
+        <h1 className="font-display text-[clamp(4.5rem,25vw,20rem)] leading-[0.9] tracking-tight">
           {"Olá :)".split("").map((char, i) => (
             <motion.span
               key={i}
@@ -37,21 +37,24 @@ export function Hero() {
           ))}
         </h1>
 
-        <motion.p
+        {/* Glass card: garante a legibilidade do subtítulo mesmo com card flutuante atrás. */}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 max-w-md text-pretty text-base text-ink/70 sm:text-lg"
+          className="mt-7 rounded-full border border-white/40 bg-white/55 px-5 py-2.5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.25)] backdrop-blur-md sm:px-7 sm:py-3"
         >
-          {settings.roles.join(" · ")}
-        </motion.p>
+          <p className="text-pretty text-sm font-medium text-ink sm:text-base">
+            {settings.roles.join("  ·  ")}
+          </p>
+        </motion.div>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-widest text-muted"
+        className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[0.7rem] uppercase tracking-widest text-faint sm:text-xs"
       >
         <span>Role para explorar</span>
         <motion.span
