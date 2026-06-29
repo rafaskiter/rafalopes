@@ -1,38 +1,72 @@
 import type { Metadata } from "next";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
+import { settings, seo } from "@/content/settings";
+import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(appUrl),
+  metadataBase: new URL(settings.url),
   title: {
-    default: "Rafael Lopes — Portfólio",
-    template: "%s | Rafael Lopes",
+    default: seo.title,
+    template: `%s — ${settings.fullName}`,
   },
-  description: "Portfólio pessoal — projetos, experiência e contato.",
+  description: seo.description,
+  keywords: [...seo.keywords],
+  authors: [{ name: settings.fullName }],
+  creator: settings.fullName,
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: appUrl,
-    title: "Rafael Lopes — Portfólio",
-    description: "Portfólio pessoal — projetos, experiência e contato.",
+    url: settings.url,
+    siteName: settings.fullName,
+    title: seo.title,
+    description: seo.description,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.title,
+    description: seo.description,
+  },
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body className="min-h-screen flex flex-col">
-        <Providers>
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${instrument.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-screen bg-bg text-ink antialiased">
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-on-dark"
+        >
+          Pular para o conteúdo
+        </a>
+        <SmoothScroll>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="conteudo">{children}</main>
           <Footer />
-        </Providers>
+        </SmoothScroll>
       </body>
     </html>
   );
