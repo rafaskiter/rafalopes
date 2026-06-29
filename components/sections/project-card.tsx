@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
-import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
+import { Media } from "@/components/placeholder/media";
 import { readableOn } from "@/lib/utils";
 
 interface StackCardProps {
@@ -91,11 +91,15 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <SeededPlaceholder
+              <Media
                 seed={project.cover.seed}
+                src={project.cover.src}
+                alt={project.cover.alt}
+                fit={project.cover.fit}
                 category={project.category}
                 rounded={false}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </motion.div>
           </div>

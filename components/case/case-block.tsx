@@ -1,7 +1,7 @@
 import type { CaseBlock as CaseBlockType, Category } from "@/types";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
-import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
+import { Media } from "@/components/placeholder/media";
 import { cn } from "@/lib/utils";
 
 function BlockHeading({ block }: { block: CaseBlockType }) {
@@ -70,8 +70,11 @@ export function CaseBlock({
             </div>
             {media[0] && (
               <Reveal delay={0.1}>
-                <SeededPlaceholder
+                <Media
                   seed={media[0].seed}
+                  src={media[0].src}
+                  alt={media[0].alt}
+                  fit={media[0].fit}
                   category={category}
                   ratio={media[0].ratio ?? "4/3"}
                   label={media[0].label}
@@ -95,11 +98,15 @@ export function CaseBlock({
           )}
           {media[0] && (
             <Reveal>
-              <SeededPlaceholder
+              <Media
                 seed={media[0].seed}
+                src={media[0].src}
+                alt={media[0].alt}
+                fit={media[0].fit}
                 category={category}
                 ratio={media[0].ratio ?? "21/9"}
                 label={media[0].label}
+                sizes="(max-width: 1280px) 100vw, 1200px"
               />
             </Reveal>
           )}
@@ -129,8 +136,11 @@ export function CaseBlock({
           >
             {media.map((m, i) => (
               <Reveal key={m.seed} delay={0.04 * i}>
-                <SeededPlaceholder
+                <Media
                   seed={m.seed}
+                  src={m.src}
+                  alt={m.alt}
+                  fit={m.fit}
                   category={category}
                   ratio={m.ratio ?? "1/1"}
                   label={m.label}

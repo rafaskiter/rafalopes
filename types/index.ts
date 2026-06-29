@@ -24,13 +24,18 @@ export type CaseType =
 
 export type Ratio = "1/1" | "4/3" | "16/9" | "3/4" | "21/9";
 
-/** Especificação de um placeholder gerado por seed (sem imagens reais). */
+/** Especificação de mídia: imagem real (src) ou placeholder gerado por seed. */
 export interface Placeholder {
   /** Semente determinística — mesma seed gera sempre o mesmo visual. */
   seed: string;
   label?: string;
   ratio?: Ratio;
   category?: Category;
+  /** Caminho de uma imagem real (em /public). Se ausente, usa placeholder. */
+  src?: string;
+  alt?: string;
+  /** Ajuste da imagem real dentro da moldura. Padrão "cover". */
+  fit?: "cover" | "contain";
 }
 
 export interface CaseMetric {
