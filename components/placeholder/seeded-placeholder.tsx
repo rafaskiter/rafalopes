@@ -28,6 +28,8 @@ interface SeededPlaceholderProps {
   className?: string;
   rounded?: boolean;
   priority?: boolean;
+  /** Preenche o elemento pai (que deve ser position:relative) ignorando o ratio. */
+  fill?: boolean;
 }
 
 /**
@@ -41,6 +43,7 @@ export function SeededPlaceholder({
   label,
   className,
   rounded = true,
+  fill = false,
 }: SeededPlaceholderProps) {
   const rnd = rngFrom(seed);
   const [dark, mid, light] = palettes[category];
@@ -63,11 +66,12 @@ export function SeededPlaceholder({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden bg-ink/5",
+        "overflow-hidden bg-ink/5",
+        fill ? "absolute inset-0 h-full w-full" : "relative w-full",
         rounded && "rounded-lg",
         className,
       )}
-      style={{ paddingBottom: ratioPad[ratio] }}
+      style={fill ? undefined : { paddingBottom: ratioPad[ratio] }}
       role="img"
       aria-label={label ? `Imagem ilustrativa: ${label}` : "Imagem ilustrativa"}
     >

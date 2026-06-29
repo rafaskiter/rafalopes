@@ -22,6 +22,7 @@ export const projects: Project[] = [
     role: ["Lead Product Designer", "UX Research", "UI Design"],
     services: ["Discovery", "Pesquisa", "UX/UI", "Design System", "Testes"],
     cover: { seed: "vitalize-cover", ratio: "16/9", category: "UX Design" },
+    color: "#2f7a6a",
     blocks: [
       {
         id: "resumo",
@@ -191,6 +192,7 @@ export const projects: Project[] = [
     role: ["Direção de Arte", "Branding", "Naming"],
     services: ["Naming", "Identidade Visual", "Aplicações", "Packaging"],
     cover: { seed: "raiz-cover", ratio: "16/9", category: "Branding" },
+    color: "#c8501e",
     blocks: [
       {
         id: "contexto",
@@ -324,6 +326,7 @@ export const projects: Project[] = [
     role: ["Designer", "Creative Developer"],
     services: ["UX/UI", "Front-end", "Motion", "Performance"],
     cover: { seed: "atlas-cover", ratio: "16/9", category: "Websites" },
+    color: "#b07b3a",
     blocks: [
       {
         id: "problema",
@@ -418,6 +421,7 @@ export const projects: Project[] = [
     role: ["Game UI/UX", "Concept", "Direção Visual"],
     services: ["Game Design", "HUD & Menus", "Concept Art", "Protótipos"],
     cover: { seed: "lumen-cover", ratio: "16/9", category: "Games" },
+    color: "#6b3fb0",
     blocks: [
       {
         id: "gameplay",
@@ -510,6 +514,7 @@ export const projects: Project[] = [
     role: ["Design System Lead"],
     services: ["Tokens", "Componentes", "Documentação", "Governança"],
     cover: { seed: "constelacao-cover", ratio: "16/9", category: "UI Design" },
+    color: "#4b54c9",
     blocks: [
       {
         id: "contexto",
@@ -599,6 +604,7 @@ export const projects: Project[] = [
     role: ["Product Designer", "Estratégia", "Branding"],
     services: ["Estratégia", "Discovery", "Branding", "UX/UI", "MVP"],
     cover: { seed: "fluxo-cover", ratio: "16/9", category: "Identidade Visual" },
+    color: "#3f5d7a",
     blocks: [
       {
         id: "contexto",

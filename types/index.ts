@@ -80,6 +80,8 @@ export interface Project {
   services: string[];
   cover: Placeholder;
   blocks: CaseBlock[];
+  /** Cor da marca usada no card grande da home (fundo). */
+  color: string;
   /** Card grande na home (destaque visual). */
   featured?: boolean;
 }

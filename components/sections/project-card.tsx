@@ -1,52 +1,106 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
 import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
+import { readableOn } from "@/lib/utils";
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+interface StackCardProps {
+  project: Project;
+  index: number;
+  total: number;
+  progress: MotionValue<number>;
+}
+
+/**
+ * Card grande no estilo "sticky stacking" (inspirado na clou.ch): cada card
+ * gruda no topo e o seguinte desliza por cima enquanto o anterior encolhe.
+ */
+export function StackCard({ project, index, total, progress }: StackCardProps) {
+  const ink = readableOn(project.color);
+  const muted = ink === "#0a0a0a" ? "rgba(10,10,10,0.62)" : "rgba(255,255,255,0.72)";
+
+  // Card encolhe conforme os próximos sobem por cima dele.
+  const targetScale = 1 - (total - index) * 0.04;
+  const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
+
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
-      transition={{ duration: 0.7, delay: (index % 2) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      className="group"
-    >
-      <Link href={`/projetos/${project.slug}`} className="block">
-        <div className="relative overflow-hidden rounded-xl">
-          <motion.div
-            whileHover={{ scale: 1.04 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <SeededPlaceholder
-              seed={project.cover.seed}
-              category={project.category}
-              ratio="4/3"
-              rounded={false}
-            />
-          </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-          <div className="absolute right-4 top-4 flex h-11 w-11 translate-y-2 items-center justify-center rounded-full bg-bg/90 opacity-0 backdrop-blur transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-            <ArrowUpRight className="size-5" />
-          </div>
-        </div>
+    <div className="sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6">
+      <motion.div
+        style={{
+          backgroundColor: project.color,
+          color: ink,
+          scale,
+          top: `calc(8vh + ${index * 26}px)`,
+        }}
+        className="relative w-full max-w-6xl origin-top overflow-hidden rounded-[1.75rem] shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
+      >
+        <Link
+          href={`/projetos/${project.slug}`}
+          className="group grid h-full gap-6 p-7 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14"
+          aria-label={`Ver projeto ${project.title}`}
+        >
+          {/* Coluna de texto */}
+          <div className="flex flex-col justify-between gap-8">
+            <div className="flex items-center justify-between">
+              <span className="text-sm tabular-nums opacity-70">
+                {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+              </span>
+              <span
+                className="flex h-12 w-12 items-center justify-center rounded-full border transition-transform duration-500 group-hover:rotate-45"
+                style={{ borderColor: muted }}
+              >
+                <ArrowUpRight className="size-5" />
+              </span>
+            </div>
 
-        <div className="mt-5 flex items-baseline justify-between gap-4">
-          <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
-            {project.title}
-          </h3>
-          <span className="shrink-0 text-sm text-muted">{project.year}</span>
-        </div>
-        <div className="mt-2 flex items-center gap-3 text-sm text-muted">
-          <span className="rounded-full border border-line px-3 py-1 text-xs uppercase tracking-wide">
-            {project.category}
-          </span>
-          <span className="text-pretty">{project.summary}</span>
-        </div>
-      </Link>
-    </motion.article>
+            <div>
+              <ul className="mb-5 flex flex-wrap gap-2">
+                {project.services.slice(0, 4).map((s) => (
+                  <li
+                    key={s}
+                    className="rounded-full border px-3 py-1 text-xs"
+                    style={{ borderColor: muted }}
+                  >
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <h3 className="font-display text-5xl leading-[0.95] tracking-tight sm:text-6xl lg:text-7xl">
+                {project.title}
+              </h3>
+              <p className="mt-5 max-w-md text-pretty text-base sm:text-lg" style={{ color: muted }}>
+                {project.summary}
+              </p>
+              <p className="mt-6 text-sm" style={{ color: muted }}>
+                {project.category} · {project.year}
+              </p>
+            </div>
+          </div>
+
+          {/* Coluna de imagem com zoom no hover */}
+          <div className="relative min-h-[240px] overflow-hidden rounded-2xl">
+            <motion.div
+              className="absolute inset-0"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <SeededPlaceholder
+                seed={project.cover.seed}
+                category={project.category}
+                rounded={false}
+                fill
+              />
+            </motion.div>
+          </div>
+        </Link>
+      </motion.div>
+    </div>
   );
 }
