@@ -10,7 +10,7 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { galleryItems } from "@/content/projects";
-import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
+import { Media } from "@/components/placeholder/media";
 
 /**
  * Posições espalhadas (em %), profundidade do parallax e tamanho.
@@ -18,7 +18,7 @@ import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
  * (cantos), evitando poluir o centro onde fica o texto.
  */
 const layout = [
-  { x: 6, y: 15, w: 150, depth: 1.4, ratio: "3/4" as const, mobile: true },
+  { x: 6, y: 15, w: 156, depth: 1.4, ratio: "1/1" as const, mobile: true },
   { x: 78, y: 11, w: 172, depth: 1.0, ratio: "4/3" as const, mobile: true },
   { x: 64, y: 61, w: 192, depth: 1.7, ratio: "1/1" as const, mobile: true },
   { x: 14, y: 64, w: 160, depth: 1.2, ratio: "4/3" as const, mobile: true },
@@ -64,6 +64,7 @@ export function FloatingGallery() {
             sy={sy}
             pos={pos}
             seed={item.seed}
+            src={item.src}
             category={item.category}
             index={i}
             reduce={!!reduce}
@@ -79,6 +80,7 @@ function FloatingItem({
   sy,
   pos,
   seed,
+  src,
   category,
   index,
   reduce,
@@ -87,6 +89,7 @@ function FloatingItem({
   sy: MotionValue<number>;
   pos: (typeof layout)[number];
   seed: string;
+  src?: string;
   category: (typeof galleryItems)[number]["category"];
   index: number;
   reduce: boolean;
@@ -134,7 +137,14 @@ function FloatingItem({
           delay: index * 0.3,
         }}
       >
-        <SeededPlaceholder seed={seed} category={category} ratio={pos.ratio} />
+        <Media
+          seed={seed}
+          src={src}
+          category={category}
+          ratio={pos.ratio}
+          fit="cover"
+          sizes="200px"
+        />
       </motion.div>
     </motion.div>
   );

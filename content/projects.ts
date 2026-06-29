@@ -29,6 +29,13 @@ export const projects: Project[] = [
       fit: "cover",
       category: "UX Design",
     },
+    card: {
+      seed: "olho-magico-card",
+      src: "/cases/olho-magico/cover-2.png",
+      alt: "Família em casa — Olho Mágico, Porto Seguro",
+      fit: "cover",
+      category: "UX Design",
+    },
     color: "#5b16c4",
     blocks: [
       {
@@ -713,6 +720,7 @@ export const galleryItems: GalleryItem[] = [
     category: p.category,
     year: p.year,
     description: p.summary,
+    src: p.card?.src,
   })),
   {
     seed: "extra-identidade-aurora",

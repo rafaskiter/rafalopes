@@ -92,10 +92,10 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
               <Media
-                seed={project.cover.seed}
-                src={project.cover.src}
-                alt={project.cover.alt}
-                fit={project.cover.fit}
+                seed={(project.card ?? project.cover).seed}
+                src={(project.card ?? project.cover).src}
+                alt={(project.card ?? project.cover).alt}
+                fit={(project.card ?? project.cover).fit}
                 category={project.category}
                 rounded={false}
                 fill

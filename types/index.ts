@@ -84,6 +84,8 @@ export interface Project {
   role: string[];
   services: string[];
   cover: Placeholder;
+  /** Capa específica do card da home (deck). Se ausente, usa `cover`. */
+  card?: Placeholder;
   blocks: CaseBlock[];
   /** Cor da marca usada no card grande da home (fundo). */
   color: string;
@@ -98,6 +100,8 @@ export interface GalleryItem {
   category: Category;
   year: number;
   description: string;
+  /** Imagem real opcional (em /public). Sem isso, usa placeholder por seed. */
+  src?: string;
 }
 
 export interface TimelineEntry {
