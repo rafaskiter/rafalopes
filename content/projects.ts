@@ -136,7 +136,7 @@ export const projects: Project[] = [
             seed: "olho-magico-sistema",
             src: "/cases/olho-magico/sistema.png",
             alt: "Telas do sistema: primeiro acesso, usuários, contratos e detalhe do contrato",
-            ratio: "4/3",
+            ratio: "1/1",
             fit: "contain",
           },
         ],
@@ -165,6 +165,19 @@ export const projects: Project[] = [
         quote: {
           text: "Mais do que telas, o Olho Mágico conectou um processo cheio de fricção ao ecossistema de produtos da Porto Seguro — com a confiança que o aluguel precisava.",
         },
+      },
+      {
+        id: "fechamento",
+        layout: "wide-media",
+        media: [
+          {
+            seed: "olho-magico-fechamento",
+            src: "/cases/olho-magico/fechamento.png",
+            alt: "Já espiou pelo Olho Mágico hoje?",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
       },
     ],
   },
