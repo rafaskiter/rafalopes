@@ -9,12 +9,13 @@ function BlockHeading({ block }: { block: CaseBlockType }) {
   return (
     <Reveal>
       {block.eyebrow && (
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-muted">
+        <span className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-muted">
+          <span className="h-px w-7 bg-current opacity-50" />
           {block.eyebrow}
-        </p>
+        </span>
       )}
       {block.heading && (
-        <h2 className="font-display text-balance text-3xl leading-tight sm:text-4xl">
+        <h2 className="font-display text-balance text-3xl leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl">
           {block.heading}
         </h2>
       )}

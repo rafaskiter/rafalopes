@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowDownToLine, Linkedin } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
-import { TextReveal } from "@/components/motion/text-reveal";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
 import { buttonVariants } from "@/components/ui/button";
 import { aboutMe, timeline, skills, tools } from "@/content/about";
@@ -46,14 +46,7 @@ export function AboutMe() {
 
         {/* Texto + listas */}
         <div>
-          <Reveal>
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-muted">
-              {aboutMe.eyebrow}
-            </p>
-          </Reveal>
-          <h2 className="font-display text-balance text-3xl leading-[1.1] sm:text-4xl">
-            <TextReveal text={aboutMe.heading} />
-          </h2>
+          <SectionHeading eyebrow={aboutMe.eyebrow} title={aboutMe.heading} />
           <div className="mt-8 grid gap-5 text-lg text-muted">
             {aboutMe.body.map((p, i) => (
               <Reveal key={i} delay={0.05 * i}>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
-import { TextReveal } from "@/components/motion/text-reveal";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { contactSchema } from "@/lib/validations";
 import { contact } from "@/content/contact";
@@ -54,14 +54,7 @@ export function Contact() {
     <Section id="contato" className="border-t border-line">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div>
-          <Reveal>
-            <p className="mb-6 text-sm uppercase tracking-[0.3em] text-muted">
-              {contact.eyebrow}
-            </p>
-          </Reveal>
-          <h2 className="font-display text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
-            <TextReveal text={contact.heading} />
-          </h2>
+          <SectionHeading eyebrow={contact.eyebrow} title={contact.heading} size="xl" />
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-pretty text-lg text-muted">
               {contact.body}
