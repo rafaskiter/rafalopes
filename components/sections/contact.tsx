@@ -42,8 +42,8 @@ export function Contact() {
     const { name, email, message } = parsed.data;
     // Integração futura: POST /api/contact (Resend). Por ora, mailto.
     window.location.href = `mailto:${settings.email}?subject=${encodeURIComponent(
-      `Contato do portfólio — ${name}`,
-    )}&body=${encodeURIComponent(`${message}\n\n— ${name} <${email}>`)}`;
+      `Contato do portfólio de ${name}`,
+    )}&body=${encodeURIComponent(`${message}\n\nEnviado por ${name} (${email})`)}`;
     setSuccess(true);
   }
 

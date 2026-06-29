@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(settings.url),
   title: {
     default: seo.title,
-    template: `%s — ${settings.fullName}`,
+    template: `%s · ${settings.fullName}`,
   },
   description: seo.description,
   keywords: [...seo.keywords],

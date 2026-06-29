@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const project = getProject(slug);
   if (!project) return {};
 
-  const title = `${project.title} — ${project.category}`;
+  const title = `${project.title} · ${project.category}`;
   return {
     title,
     description: project.summary,

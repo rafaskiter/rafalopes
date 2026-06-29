@@ -7,9 +7,9 @@ import type { NavItem, SocialLink } from "@/types";
 export const settings = {
   name: "Rafa Lopes",
   fullName: "Rafael Lopes",
-  roles: ["Designer de Produto", "UX/UI Designer", "Creative Technologist"],
+  roles: ["Designer de Produto", "UX/UI Designer", "HMI", "Design Engineer"],
   shortBio:
-    "Designer de produto focado em experiências digitais com propósito — da estratégia à interface.",
+    "Designer de produto que cuida das experiências digitais com propósito, da estratégia à interface.",
   email: "skiter.rafael@gmail.com",
   /** Apenas dígitos, formato internacional. Configurar quando definido. */
   whatsapp: "5500000000000",
@@ -34,14 +34,15 @@ export const socials: SocialLink[] = [
 ];
 
 export const seo = {
-  title: `${settings.fullName} — ${settings.roles[0]}`,
+  title: `${settings.fullName} · ${settings.roles[0]}`,
   description:
-    "Portfólio de Rafa Lopes — Designer de Produto, UX/UI e Creative Technologist. Branding, identidade visual, websites e produtos digitais com propósito.",
+    "Portfólio de Rafa Lopes, designer de produto que trabalha entre UX/UI, HMI e Design Engineering. Branding, identidade visual, websites e produtos digitais com propósito.",
   keywords: [
     "Designer de Produto",
     "UX Designer",
     "UI Designer",
-    "Creative Technologist",
+    "HMI",
+    "Design Engineer",
     "Branding",
     "Identidade Visual",
     "Portfólio",

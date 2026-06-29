@@ -18,7 +18,7 @@ export function Footer() {
             </a>
           </div>
 
-          <nav aria-label="Rodapé — navegação">
+          <nav aria-label="Navegação do rodapé">
             <p className="mb-4 text-xs uppercase tracking-widest text-muted">Navegação</p>
             <ul className="space-y-2">
               {nav.map((item) => (
@@ -31,7 +31,7 @@ export function Footer() {
             </ul>
           </nav>
 
-          <nav aria-label="Rodapé — redes sociais">
+          <nav aria-label="Redes sociais">
             <p className="mb-4 text-xs uppercase tracking-widest text-muted">Social</p>
             <ul className="space-y-2">
               {socials.map((s) => (

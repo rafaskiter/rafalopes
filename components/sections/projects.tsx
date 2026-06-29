@@ -9,7 +9,7 @@ export function Projects() {
       <Container className="pt-[var(--section-y)]">
         <SectionHeading
           eyebrow="Projetos"
-          title="Projetos dos quais me orgulho particularmente — concebidos e comunicados com um propósito bem definido."
+          title="Projetos que ajudei a construir com um propósito bem definido."
           className="max-w-4xl"
         />
       </Container>

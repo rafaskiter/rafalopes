@@ -18,14 +18,14 @@ import { Media } from "@/components/placeholder/media";
  * (cantos), evitando poluir o centro onde fica o texto.
  */
 const layout = [
-  { x: 6, y: 15, w: 156, depth: 1.4, ratio: "1/1" as const, mobile: true },
-  { x: 78, y: 11, w: 172, depth: 1.0, ratio: "4/3" as const, mobile: true },
-  { x: 64, y: 61, w: 192, depth: 1.7, ratio: "1/1" as const, mobile: true },
-  { x: 14, y: 64, w: 160, depth: 1.2, ratio: "4/3" as const, mobile: true },
-  { x: 86, y: 45, w: 132, depth: 2.1, ratio: "3/4" as const, mobile: false },
-  { x: 39, y: 5, w: 120, depth: 0.8, ratio: "1/1" as const, mobile: false },
-  { x: 0, y: 41, w: 122, depth: 2.3, ratio: "1/1" as const, mobile: false },
-  { x: 48, y: 74, w: 142, depth: 1.5, ratio: "4/3" as const, mobile: false },
+  { x: 5, y: 14, w: 204, depth: 1.4, ratio: "1/1" as const, mobile: true },
+  { x: 76, y: 10, w: 220, depth: 1.0, ratio: "4/3" as const, mobile: true },
+  { x: 63, y: 60, w: 240, depth: 1.7, ratio: "1/1" as const, mobile: true },
+  { x: 13, y: 63, w: 208, depth: 1.2, ratio: "4/3" as const, mobile: true },
+  { x: 85, y: 44, w: 176, depth: 2.1, ratio: "3/4" as const, mobile: false },
+  { x: 38, y: 4, w: 158, depth: 0.8, ratio: "1/1" as const, mobile: false },
+  { x: 0, y: 40, w: 160, depth: 2.3, ratio: "1/1" as const, mobile: false },
+  { x: 47, y: 74, w: 188, depth: 1.5, ratio: "4/3" as const, mobile: false },
 ];
 
 /** Amplitude (px) do deslocamento por unidade de profundidade. */
@@ -65,6 +65,7 @@ export function FloatingGallery() {
             pos={pos}
             seed={item.seed}
             src={item.src}
+            title={item.title}
             category={item.category}
             index={i}
             reduce={!!reduce}
@@ -81,6 +82,7 @@ function FloatingItem({
   pos,
   seed,
   src,
+  title,
   category,
   index,
   reduce,
@@ -90,6 +92,7 @@ function FloatingItem({
   pos: (typeof layout)[number];
   seed: string;
   src?: string;
+  title: string;
   category: (typeof galleryItems)[number]["category"];
   index: number;
   reduce: boolean;
@@ -109,7 +112,7 @@ function FloatingItem({
       style={{
         left: `${pos.x}%`,
         top: `${pos.y}%`,
-        width: `clamp(72px, 16vw, ${pos.w}px)`,
+        width: `clamp(104px, 18vw, ${pos.w}px)`,
         x: tx,
         y: ty,
         rotate,
@@ -120,7 +123,7 @@ function FloatingItem({
     >
       {/* Camada interna: flutuar/orbitar contínuo e independente do mouse. */}
       <motion.div
-        className="shadow-[0_24px_60px_-24px_rgba(0,0,0,0.35)]"
+        className="flex flex-col items-center gap-2"
         style={{ rotate: baseRot }}
         animate={
           reduce
@@ -137,14 +140,22 @@ function FloatingItem({
           delay: index * 0.3,
         }}
       >
-        <Media
-          seed={seed}
-          src={src}
-          category={category}
-          ratio={pos.ratio}
-          fit="cover"
-          sizes="200px"
-        />
+        <div className="w-full overflow-hidden rounded-xl shadow-[0_24px_60px_-24px_rgba(0,0,0,0.35)]">
+          <Media
+            seed={seed}
+            src={src}
+            category={category}
+            ratio={pos.ratio}
+            fit="cover"
+            rounded={false}
+            sizes="280px"
+          />
+        </div>
+        {src && (
+          <span className="whitespace-nowrap rounded-full border border-line bg-bg/85 px-3 py-1 text-[0.7rem] font-medium text-ink shadow-sm backdrop-blur">
+            {title}
+          </span>
+        )}
       </motion.div>
     </motion.div>
   );

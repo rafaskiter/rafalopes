@@ -16,15 +16,15 @@ export const projects: Project[] = [
     year: 2021,
     featured: true,
     summary:
-      "Plataforma da Porto Seguro para locação sem caução nem fiador — sistema para imobiliárias e app para o inquilino.",
+      "Plataforma da Porto Seguro para locação sem caução nem fiador. Um sistema para imobiliárias e um app para o inquilino.",
     intro:
-      "Alugar sem caução e sem fiador, com garantias reais para o proprietário — um produto nascido no Quinto Andar de inovação da Porto Seguro.",
+      "Alugar sem caução e sem fiador, com garantias reais para o proprietário. Um produto que nasceu no Quinto Andar de inovação da Porto Seguro.",
     role: ["Product Designer", "UX Research", "UI Design"],
     services: ["Discovery", "UX Research", "Design System", "UI", "App"],
     cover: {
       seed: "olho-magico-cover",
       src: "/cases/olho-magico/cover.png",
-      alt: "Olho Mágico — sistema administrativo para imobiliárias e app para inquilino",
+      alt: "Olho Mágico, sistema administrativo para imobiliárias e app para inquilino",
       ratio: "16/9",
       fit: "cover",
       category: "UX Design",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     card: {
       seed: "olho-magico-card",
       src: "/cases/olho-magico/cover-2.png",
-      alt: "Família em casa — Olho Mágico, Porto Seguro",
+      alt: "Família em casa usando o Olho Mágico, da Porto Seguro",
       fit: "cover",
       category: "UX Design",
     },
@@ -44,7 +44,7 @@ export const projects: Project[] = [
         eyebrow: "Resumo",
         heading: "Locação sem caução e sem fiador",
         body: [
-          "O Olho Mágico é a plataforma da Porto Seguro para destravar a locação de imóveis: o inquilino aluga sem caução e sem fiador, enquanto o proprietário ganha garantias reais — sustentadas pelo seguro fiança da Porto.",
+          "O Olho Mágico é a plataforma da Porto Seguro para destravar a locação de imóveis: o inquilino aluga sem caução e sem fiador, enquanto o proprietário ganha garantias reais, sustentadas pelo seguro fiança da Porto.",
           "Atuei no design do produto de ponta a ponta: da pesquisa com imobiliárias e inquilinos ao sistema administrativo web e ao aplicativo do inquilino.",
         ],
       },
@@ -54,7 +54,7 @@ export const projects: Project[] = [
         eyebrow: "Contexto",
         heading: "Direto do Quinto Andar",
         body: [
-          "O projeto nasceu no Quinto Andar de inovação da Porto Seguro — uma frente competitiva para criar produtos digitais que conversam com o ecossistema da companhia.",
+          "O projeto nasceu no Quinto Andar de inovação da Porto Seguro, uma frente competitiva para criar produtos digitais que conversam com o ecossistema da companhia.",
           "A Porto já tinha relacionamento com imobiliárias por meio do seguro fiança. Faltava um sistema robusto que transformasse essa relação em um fluxo digital, do contrato à cobrança e ao repasse.",
         ],
       },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
         eyebrow: "Sistema administrativo",
         heading: "O dia a dia da imobiliária",
         body: [
-          "Gestão de usuários e permissões por setor, contratos com aditivos e atendimentos, repasses, consumo, relatórios e nota fiscal — tudo em uma interface clara, com a identidade Olho Mágico.",
+          "Gestão de usuários e permissões por setor, contratos com aditivos e atendimentos, repasses, consumo, relatórios e nota fiscal. Tudo em uma interface clara, com a identidade Olho Mágico.",
         ],
         media: [
           {
@@ -170,7 +170,7 @@ export const projects: Project[] = [
         id: "ecossistema",
         layout: "quote",
         quote: {
-          text: "Mais do que telas, o Olho Mágico conectou um processo cheio de fricção ao ecossistema de produtos da Porto Seguro — com a confiança que o aluguel precisava.",
+          text: "Mais do que telas, o Olho Mágico conectou um processo cheio de fricção ao ecossistema de produtos da Porto Seguro, com a confiança que o aluguel precisava.",
         },
       },
       {
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     summary:
       "Identidade visual de uma torrefação de café especial com origem rastreável e alma artesanal.",
     intro:
-      "Uma marca que celebra a origem — do grão ao gole, cada detalhe conta a história de quem planta.",
+      "Uma marca que celebra a origem. Do grão ao gole, cada detalhe conta a história de quem planta.",
     role: ["Direção de Arte", "Branding", "Naming"],
     services: ["Naming", "Identidade Visual", "Aplicações", "Packaging"],
     cover: { seed: "raiz-cover", ratio: "16/9", category: "Branding" },
@@ -214,7 +214,7 @@ export const projects: Project[] = [
         heading: "Do produtor para a xícara",
         body: [
           "A Raíz nasceu do desejo de aproximar quem produz de quem consome café especial. Faltava uma marca à altura da qualidade do grão.",
-          "O briefing pedia algo artesanal, mas contemporâneo — longe do clichê rústico do setor.",
+          "O briefing pedia algo artesanal, mas contemporâneo, longe do clichê rústico do setor.",
         ],
         media: [{ seed: "raiz-context", ratio: "4/3" }],
       },
@@ -235,7 +235,7 @@ export const projects: Project[] = [
         eyebrow: "Naming",
         heading: "Raíz: o que sustenta tudo",
         body: [
-          "Entre dezenas de rotas, \"Raíz\" venceu por carregar dupla leitura — a raiz da planta e a origem da história. Curto, memorável e fácil de pronunciar internacionalmente.",
+          "Entre dezenas de rotas, \"Raíz\" venceu por carregar dupla leitura: a raiz da planta e a origem da história. Curto, memorável e fácil de pronunciar internacionalmente.",
         ],
       },
       {
@@ -266,7 +266,7 @@ export const projects: Project[] = [
         eyebrow: "Tipografia",
         heading: "Serifa com personalidade",
         body: [
-          "Uma serifa de alto contraste para o logotipo, equilibrada por uma grotesca neutra nos textos — tradição encontra modernidade.",
+          "Uma serifa de alto contraste para o logotipo, equilibrada por uma grotesca neutra nos textos. Tradição encontra modernidade.",
         ],
         media: [{ seed: "raiz-type", ratio: "21/9" }],
       },
@@ -300,7 +300,7 @@ export const projects: Project[] = [
         eyebrow: "Aplicações & Mockups",
         heading: "A marca no mundo real",
         body: [
-          "Packaging, canecas, banners, cartões, camisetas, outdoor e redes sociais — um sistema coeso em todos os pontos de contato.",
+          "Packaging, canecas, banners, cartões, camisetas, outdoor e redes sociais. Um sistema coeso em todos os pontos de contato.",
         ],
         media: [
           { seed: "raiz-pack", ratio: "4/3", label: "Packaging" },
@@ -335,7 +335,7 @@ export const projects: Project[] = [
     summary:
       "Site institucional imersivo para um escritório de arquitetura, com narrativa de portfólio fluida.",
     intro:
-      "Arquitetura é espaço e tempo. O site precisava ser uma caminhada — não um catálogo.",
+      "Arquitetura é espaço e tempo. O site precisava ser uma caminhada, não um catálogo.",
     role: ["Designer", "Creative Developer"],
     services: ["UX/UI", "Front-end", "Motion", "Performance"],
     cover: { seed: "atlas-cover", ratio: "16/9", category: "Websites" },
@@ -347,7 +347,7 @@ export const projects: Project[] = [
         eyebrow: "Problema",
         heading: "Um portfólio que não respirava",
         body: [
-          "O site antigo era uma grade densa de fotos. Bonito, mas frio — não transmitia o cuidado espacial que define o estúdio.",
+          "O site antigo era uma grade densa de fotos. Bonito, mas frio, não transmitia o cuidado espacial que define o estúdio.",
           "Precisávamos de ritmo, escala e silêncio: a sensação de percorrer um edifício.",
         ],
         media: [{ seed: "atlas-problem", ratio: "4/3" }],
@@ -389,7 +389,7 @@ export const projects: Project[] = [
         eyebrow: "Componentes",
         heading: "Sistema enxuto e reutilizável",
         body: [
-          "Um conjunto pequeno de componentes — hero, galeria, citação, índice — combinados de formas diferentes para cada projeto.",
+          "Um conjunto pequeno de componentes (hero, galeria, citação, índice) combinados de formas diferentes para cada projeto.",
         ],
         media: [
           { seed: "atlas-comp-1", ratio: "1/1" },
@@ -443,7 +443,7 @@ export const projects: Project[] = [
         heading: "Luz como mecânica",
         body: [
           "O jogador manipula feixes de luz para revelar caminhos e memórias. A clareza visual da mecânica era inegociável.",
-          "Cada puzzle ensina sem tutorial — pela própria linguagem visual.",
+          "Cada puzzle ensina sem tutorial, pela própria linguagem visual.",
         ],
         media: [{ seed: "lumen-gameplay", ratio: "4/3" }],
       },
@@ -453,7 +453,7 @@ export const projects: Project[] = [
         eyebrow: "Narrativa",
         heading: "Uma história contada sem palavras",
         body: [
-          "Lumen evita texto. A narrativa emerge de ambientes, cor e som — o design de interface precisava respeitar esse silêncio.",
+          "Lumen evita texto. A narrativa emerge de ambientes, cor e som, e o design de interface precisava respeitar esse silêncio.",
         ],
       },
       {
@@ -505,7 +505,7 @@ export const projects: Project[] = [
         id: "resultados",
         layout: "quote",
         quote: {
-          text: "A interface some e você esquece que está jogando — só sente.",
+          text: "A interface some e você esquece que está jogando. Só sente.",
           author: "Playtester, sessão de concept",
         },
       },
@@ -548,7 +548,7 @@ export const projects: Project[] = [
         list: [
           { title: "Acessível por padrão", description: "Contraste e foco garantidos em cada componente." },
           { title: "Tema sem fork", description: "Multimarca via tokens, não via cópias de código." },
-          { title: "Documentação viva", description: "Quem usa, encontra — e confia." },
+          { title: "Documentação viva", description: "Quem usa, encontra e confia." },
         ],
       },
       {
@@ -636,7 +636,7 @@ export const projects: Project[] = [
         eyebrow: "Problema",
         heading: "Ferramentas de foco que distraem",
         body: [
-          "A ironia do mercado: apps de produtividade cheios de recursos que competem pela sua atenção. Apostamos no oposto — radical simplicidade.",
+          "A ironia do mercado: apps de produtividade cheios de recursos que competem pela sua atenção. Apostamos no oposto, na simplicidade radical.",
         ],
       },
       {
@@ -656,7 +656,7 @@ export const projects: Project[] = [
         eyebrow: "Branding",
         heading: "Uma identidade que acalma",
         body: [
-          "Marca minimalista, com uma paleta sóbria e uma marca-símbolo que evoca uma onda — o estado de fluxo.",
+          "Marca minimalista, com uma paleta sóbria e uma marca-símbolo que evoca uma onda, o estado de fluxo.",
         ],
         media: [{ seed: "fluxo-brand", ratio: "21/9" }],
       },
