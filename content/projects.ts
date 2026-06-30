@@ -189,6 +189,139 @@ export const projects: Project[] = [
     ],
   },
 
+  // 2 — Aura OS (Instituto Eldorado) [HMI] -----------------------------------
+  {
+    slug: "aura-os",
+    title: "Aura OS",
+    client: "Instituto Eldorado",
+    category: "UI Design",
+    type: "produto",
+    year: 2026,
+    featured: true,
+    summary:
+      "White label de infotainment automotivo para o Instituto Eldorado, feito para vestir apresentações técnicas e comerciais.",
+    intro:
+      "The car experience, reimagined. Uma interface de bordo white label, moderna e versátil, pronta para vestir cada demonstração do Eldorado.",
+    role: ["HMI Designer", "UI Design", "Design Engineer", "3D"],
+    services: ["White Label", "HMI", "UI Design", "3D / Blender", "Design System"],
+    cover: {
+      seed: "aura-os-cover",
+      src: "/cases/aura-os/cover.png",
+      alt: "Aura OS aplicado em um veículo: cluster e telas centrais",
+      ratio: "16/9",
+      fit: "cover",
+      category: "UI Design",
+    },
+    card: {
+      seed: "aura-os-card",
+      src: "/cases/aura-os/home.png",
+      alt: "Tela inicial do Aura OS",
+      fit: "cover",
+      category: "UI Design",
+    },
+    color: "#0d1730",
+    blocks: [
+      {
+        id: "resumo",
+        layout: "text",
+        eyebrow: "Resumo",
+        heading: "Uma experiência de bordo, repensada",
+        body: [
+          "O Aura OS é um sistema de infotainment white label que criei no Instituto Eldorado. A ideia era ter uma base sólida e bonita, capaz de vestir as muitas demonstrações técnicas e comerciais do instituto sem começar do zero a cada projeto.",
+          "Da tela inicial ao painel de instrumentos, tudo foi desenhado para parecer um produto real, pronto para ir ao carro.",
+        ],
+      },
+      {
+        id: "premissas",
+        layout: "list",
+        eyebrow: "Premissas",
+        heading: "O que guiou o projeto",
+        list: [
+          { title: "Versatilidade", description: "Uma white label capaz de dar suporte às diversas demandas de apresentações técnicas e comerciais do Eldorado." },
+          { title: "Referências contemporâneas", description: "Investigar o que há de mais atual para garantir relevância estética e modernidade no mercado." },
+          { title: "Repertório técnico", description: "Elevar a proposta de valor e a qualidade das soluções entregues ao cliente." },
+          { title: "Prazo curto", description: "Entregar soluções de alta qualidade dentro de um tempo de execução bem limitado." },
+        ],
+      },
+      {
+        id: "inspiracao",
+        layout: "text",
+        eyebrow: "Direção",
+        heading: "Olhando para o mercado chinês",
+        body: [
+          "A direção visual bebeu muito dos carros chineses, que dominaram as conversas sobre interface automotiva em 2026. Telas amplas, modo escuro elegante, o render do próprio veículo em destaque e uma linguagem gráfica limpa e tecnológica.",
+        ],
+      },
+      {
+        id: "processo",
+        layout: "wide-media",
+        eyebrow: "Processo",
+        heading: "Do wireframe ao render 3D",
+        body: [
+          "O carro que aparece nas telas foi modelado e renderizado em 3D no Blender, do bloco cinza inicial até a versão iluminada que entra na interface.",
+        ],
+        media: [
+          { seed: "aura-os-process", src: "/cases/aura-os/process-3d.png", alt: "Etapas da modelagem 3D do carro no Blender", ratio: "21/9", fit: "contain" },
+        ],
+      },
+      {
+        id: "home",
+        layout: "wide-media",
+        eyebrow: "Tela inicial",
+        heading: "Tudo à mão, sem ruído",
+        body: [
+          "A home reúne mídia, navegação, clima e consumo em uma composição calma, com o render do veículo ancorando a cena.",
+        ],
+        media: [
+          { seed: "aura-os-home", src: "/cases/aura-os/home.png", alt: "Tela inicial do Aura OS com player, navegação e consumo", ratio: "16/9", fit: "cover" },
+        ],
+      },
+      {
+        id: "drive",
+        layout: "wide-media",
+        eyebrow: "Drive Mode",
+        heading: "Modos de condução",
+        body: [
+          "Seleção de modos de direção como Eco e Sport, com leitura imediata e o carro respondendo no centro da tela.",
+        ],
+        media: [
+          { seed: "aura-os-drive", src: "/cases/aura-os/drive.png", alt: "Tela de seleção de modo de condução do Aura OS", ratio: "16/9", fit: "cover" },
+        ],
+      },
+      {
+        id: "cluster",
+        layout: "wide-media",
+        eyebrow: "Cluster",
+        heading: "Painel de instrumentos",
+        body: [
+          "O cluster traz velocímetro, marcha, autonomia e energia em uma leitura limpa, pensada para ser entendida num relance.",
+        ],
+        media: [
+          { seed: "aura-os-cluster", src: "/cases/aura-os/cluster.png", alt: "Painel de instrumentos do Aura OS", ratio: "21/9", fit: "contain" },
+        ],
+      },
+      {
+        id: "veiculo",
+        layout: "wide-media",
+        eyebrow: "Controle do veículo",
+        heading: "Exterior e interior",
+        body: [
+          "Atalhos para portas, carregamento, rodas e clima, sempre com o carro em 3D como referência espacial.",
+        ],
+        media: [
+          { seed: "aura-os-car", src: "/cases/aura-os/car.png", alt: "Tela de controle do veículo, exterior e interior", ratio: "16/9", fit: "cover" },
+        ],
+      },
+      {
+        id: "fecho",
+        layout: "quote",
+        quote: {
+          text: "Uma base que parece produto de verdade: bonita o bastante para vender a ideia e flexível o suficiente para virar muitas demonstrações.",
+        },
+      },
+    ],
+  },
+
   // 2 — Branding -------------------------------------------------------------
   {
     slug: "raiz-cafe",

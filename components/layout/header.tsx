@@ -25,14 +25,15 @@ export function Header() {
   }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
-        scrolled
-          ? "border-b border-line/70 bg-bg/70 backdrop-blur-xl"
-          : "border-b border-transparent",
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-colors duration-500",
+          scrolled
+            ? "border-b border-line/70 bg-bg/70 backdrop-blur-xl"
+            : "border-b border-transparent",
+        )}
+      >
       <div className="mx-auto flex h-[var(--header-h,4.5rem)] max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
@@ -68,7 +69,8 @@ export function Header() {
             <span className={cn("h-px bg-ink transition-transform duration-300", open && "-translate-y-[6px] -rotate-45")} />
           </div>
         </button>
-      </div>
+        </div>
+      </header>
 
       <AnimatePresence>
         {open && (
@@ -100,6 +102,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
