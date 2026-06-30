@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, settings } from "@/content/settings";
 import { cn } from "@/lib/utils";
@@ -37,10 +38,21 @@ export function Header() {
       <div className="mx-auto flex h-[var(--header-h,4.5rem)] max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className="font-display text-lg tracking-tight"
+          className="relative z-50 flex items-center gap-2.5"
           onClick={() => setOpen(false)}
+          aria-label={`${settings.fullName} — início`}
         >
-          {settings.name}
+          <Image
+            src="/brand/logo.png"
+            alt=""
+            width={315}
+            height={320}
+            priority
+            className="h-9 w-9 object-contain"
+          />
+          <span className="font-display text-lg font-semibold tracking-tight">
+            {settings.name}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Navegação principal">

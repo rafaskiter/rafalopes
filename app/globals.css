@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Tokens de tema — base no design system "cohere" (getdesign.md).     *
- * Canvas branco, bandas escuras verde-profundo, acento coral.         *
+ * Tokens de tema — design system da marca Rafa Lopes (Figma).          *
+ * Canvas lime-creme, tinta roxo-escuro, acento coral-pink.             *
+ * Fontes: Fredoka (display) + Urbanist (texto).                        *
  * ------------------------------------------------------------------ */
 :root {
-  --bg: #ffffff; /* canvas */
-  --bg-elevated: #ffffff;
-  --surface: #eeece7; /* soft-stone (superfície alternativa quente) */
-  --ink: #17171c; /* near-black: títulos, bandas escuras, botões */
-  --ink-soft: #212121; /* corpo de texto */
-  --muted: #616161; /* texto secundário */
-  --faint: #93939f; /* metadados / eyebrows */
-  --line: #d9d9dd; /* hairline */
-  --accent: #ff7759; /* coral */
-  --green: #003c33; /* deep enterprise green (banda escura) */
-  --navy: #071829;
-  --on-dark: #ffffff;
-  --muted-on-dark: rgba(255, 255, 255, 0.62);
+  --bg: #f0fece; /* canvas (cream/50) */
+  --bg-elevated: #ffffff; /* surface */
+  --surface: #f8ffe8; /* cream/25 */
+  --ink: #3b1a47; /* roxo escuro: títulos, bandas escuras, botões, corpo */
+  --ink-soft: #3b1a47; /* corpo de texto */
+  --muted: #7d4f94; /* texto muted (purple/500) */
+  --faint: #7d4f94; /* metadados */
+  --line: #e3d9e8; /* borda (purple/100) */
+  --accent: #ff5c8a; /* coral-pink (accent primary) */
+  --cyan: #00e5db; /* accent secondary */
+  --lime: #b6ff1a; /* accent positive */
+  --gold: #d4c82e; /* accent warning */
+  --on-dark: #f8ffe8; /* texto sobre roxo */
+  --muted-on-dark: #c9b5d2; /* purple/200 */
   --line-on-dark: rgba(255, 255, 255, 0.14);
 
-  --radius: 22px; /* raio de mídia assinatura (cohere lg) */
+  --radius: 24px; /* cards / mídia (md) */
 
   --container: 80rem; /* 1280px */
   --section-y: clamp(4.5rem, 11vh, 9rem);
@@ -37,12 +39,14 @@
   --color-faint: var(--faint);
   --color-line: var(--line);
   --color-accent: var(--accent);
-  --color-green: var(--green);
+  --color-cyan: var(--cyan);
+  --color-lime: var(--lime);
+  --color-gold: var(--gold);
   --color-on-dark: var(--on-dark);
   --color-muted-on-dark: var(--muted-on-dark);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-corben), ui-serif, Georgia, serif;
+  --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
 
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 8px);
@@ -95,9 +99,9 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -0.01em;
-    line-height: 1.02;
+    line-height: 1.04;
   }
 }
 

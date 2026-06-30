@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Corben } from "next/font/google";
+import { Urbanist, Fredoka } from "next/font/google";
 import "./globals.css";
 import { settings, seo } from "@/content/settings";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 
-const inter = Inter({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-urbanist",
   display: "swap",
 });
 
-const corben = Corben({
+const fredoka = Fredoka({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-corben",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-fredoka",
   display: "swap",
 });
 
@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${corben.variable}`}
+      className={`${urbanist.variable} ${fredoka.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-bg text-ink antialiased">

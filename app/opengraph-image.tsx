@@ -16,16 +16,16 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 80,
-          background: "#0a0a0a",
-          color: "#f6f5f2",
-          fontFamily: "Georgia, serif",
+          background: "#3b1a47",
+          color: "#f8ffe8",
+          fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
-        <div style={{ fontSize: 28, letterSpacing: 4, textTransform: "uppercase", color: "#9b9b94" }}>
+        <div style={{ fontSize: 28, letterSpacing: 4, textTransform: "uppercase", color: "#ff5c8a", fontWeight: 700 }}>
           {settings.fullName}
         </div>
-        <div style={{ fontSize: 120, lineHeight: 1 }}>Olá :)</div>
-        <div style={{ fontSize: 32, color: "#9b9b94" }}>
+        <div style={{ fontSize: 140, lineHeight: 1, fontWeight: 700 }}>Olá :)</div>
+        <div style={{ fontSize: 32, color: "#c9b5d2" }}>
           {settings.roles.join("  ·  ")}
         </div>
       </div>

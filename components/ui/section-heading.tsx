@@ -28,8 +28,8 @@ export function SectionHeading({
     <div className={className}>
       {eyebrow && (
         <Reveal>
-          <span className="mb-5 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-            <span className="h-px w-7 bg-current opacity-50" />
+          <span className="mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-accent">
+            <span className="size-1.5 rounded-full bg-current" />
             {eyebrow}
           </span>
         </Reveal>

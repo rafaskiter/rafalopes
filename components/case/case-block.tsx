@@ -9,8 +9,8 @@ function BlockHeading({ block }: { block: CaseBlockType }) {
   return (
     <Reveal>
       {block.eyebrow && (
-        <span className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-muted">
-          <span className="h-px w-7 bg-current opacity-50" />
+        <span className="mb-4 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-accent">
+          <span className="size-1.5 rounded-full bg-current" />
           {block.eyebrow}
         </span>
       )}
