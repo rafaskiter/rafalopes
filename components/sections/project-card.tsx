@@ -75,7 +75,7 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
               <h3 className="font-display text-[2.25rem] leading-[1] tracking-tight sm:text-6xl lg:text-7xl">
                 {project.title}
               </h3>
-              <p className="mt-4 max-w-md text-pretty text-sm sm:mt-5 sm:text-lg" style={{ color: muted }}>
+              <p className="mt-4 max-w-md text-pretty text-base sm:mt-5 sm:text-xl" style={{ color: muted }}>
                 {project.summary}
               </p>
               <p className="mt-4 text-sm sm:mt-6" style={{ color: muted }}>

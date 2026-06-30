@@ -6,13 +6,14 @@
  * Fontes: Fredoka (display) + Urbanist (texto).                        *
  * ------------------------------------------------------------------ */
 :root {
-  --bg: #f0fece; /* canvas (cream/50) */
+  --bg: #f6f9e4; /* canvas (creme mais claro e menos saturado) */
   --bg-elevated: #ffffff; /* surface */
-  --surface: #f8ffe8; /* cream/25 */
-  --ink: #3b1a47; /* roxo escuro: títulos, bandas escuras, botões, corpo */
-  --ink-soft: #3b1a47; /* corpo de texto */
-  --muted: #7d4f94; /* texto muted (purple/500) */
-  --faint: #7d4f94; /* metadados */
+  --surface: #fbfdef; /* cream claro */
+  --ink: #3b1a47; /* roxo escuro: títulos, bandas escuras, botões */
+  --ink-hover: #5c3470; /* roxo mais claro (hover do botão primary) */
+  --ink-soft: #333333; /* parágrafos (cinza escuro) */
+  --muted: #333333; /* parágrafos / texto secundário (cinza escuro) */
+  --faint: #8a8a8a; /* metadados / labels pequenos */
   --line: #e3d9e8; /* borda (purple/100) */
   --accent: #ff5c8a; /* coral-pink (accent primary) */
   --cyan: #00e5db; /* accent secondary */
@@ -34,6 +35,7 @@
   --color-bg-elevated: var(--bg-elevated);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
+  --color-ink-hover: var(--ink-hover);
   --color-ink-soft: var(--ink-soft);
   --color-muted: var(--muted);
   --color-faint: var(--faint);
@@ -46,7 +48,7 @@
   --color-muted-on-dark: var(--muted-on-dark);
 
   --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-corben), ui-serif, Georgia, serif;
 
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 8px);
@@ -99,7 +101,7 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: -0.01em;
     line-height: 1.04;
   }

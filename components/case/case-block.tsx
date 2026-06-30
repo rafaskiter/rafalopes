@@ -26,7 +26,7 @@ function BlockHeading({ block }: { block: CaseBlockType }) {
 function Body({ body }: { body?: string[] }) {
   if (!body?.length) return null;
   return (
-    <div className="grid gap-5 text-lg text-muted">
+    <div className="grid gap-5 text-xl text-muted">
       {body.map((p, i) => (
         <Reveal key={i} delay={0.05 * i}>
           <p className="text-pretty">{p}</p>

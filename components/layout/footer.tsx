@@ -54,7 +54,7 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {settings.fullName}. {settings.location}.
           </p>
-          <p>Feito com Next.js, Tailwind &amp; Framer Motion.</p>
+          <p>Feito por mim :)</p>
         </div>
       </div>
     </footer>

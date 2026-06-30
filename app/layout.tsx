@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Fredoka } from "next/font/google";
+import { Urbanist, Corben } from "next/font/google";
 import "./globals.css";
 import { settings, seo } from "@/content/settings";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
@@ -12,10 +12,10 @@ const urbanist = Urbanist({
   display: "swap",
 });
 
-const fredoka = Fredoka({
+const corben = Corben({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-fredoka",
+  weight: ["400", "700"],
+  variable: "--font-corben",
   display: "swap",
 });
 
@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${urbanist.variable} ${fredoka.variable}`}
+      className={`${urbanist.variable} ${corben.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-bg text-ink antialiased">

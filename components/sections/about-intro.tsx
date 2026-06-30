@@ -12,7 +12,7 @@ export function AboutIntro() {
         size="xl"
         className="max-w-5xl"
       />
-      <div className="mt-12 grid max-w-3xl gap-6 text-lg text-muted">
+      <div className="mt-12 grid max-w-3xl gap-6 text-xl text-muted">
         {aboutIntro.body.map((p, i) => (
           <Reveal key={i} delay={0.1 + i * 0.1}>
             <p className="text-pretty">{p}</p>

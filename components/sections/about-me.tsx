@@ -47,7 +47,7 @@ export function AboutMe() {
         {/* Texto + listas */}
         <div>
           <SectionHeading eyebrow={aboutMe.eyebrow} title={aboutMe.heading} />
-          <div className="mt-8 grid gap-5 text-lg text-muted">
+          <div className="mt-8 grid gap-5 text-xl text-muted">
             {aboutMe.body.map((p, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <p className="text-pretty">{p}</p>
