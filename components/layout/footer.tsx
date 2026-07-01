@@ -3,8 +3,9 @@ import { nav, settings, socials } from "@/content/settings";
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-on-dark [--line:var(--line-on-dark)] [--muted:var(--muted-on-dark)]">
-      <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+    <footer className="px-3 pb-3 sm:px-4 sm:pb-4">
+      <div className="rounded-[2rem] bg-ink text-on-dark [--line:var(--line-on-dark)] [--muted:var(--muted-on-dark)] sm:rounded-[2.75rem]">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-12">
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
           <div>
             <p className="font-display text-4xl tracking-tight sm:text-5xl">
@@ -56,6 +57,7 @@ export function Footer() {
           </p>
           <p>Feito por mim :)</p>
         </div>
+      </div>
       </div>
     </footer>
   );

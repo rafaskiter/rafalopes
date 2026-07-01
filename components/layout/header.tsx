@@ -38,21 +38,18 @@ export function Header() {
       <div className="mx-auto flex h-[var(--header-h,4.5rem)] max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className="relative z-50 flex items-center gap-2.5"
+          className="relative z-50 flex items-center"
           onClick={() => setOpen(false)}
           aria-label={`${settings.fullName} — início`}
         >
           <Image
             src="/brand/logo.png"
-            alt=""
+            alt={settings.fullName}
             width={315}
             height={320}
             priority
-            className="h-9 w-9 object-contain"
+            className="h-10 w-10 object-contain"
           />
-          <span className="font-display text-lg font-semibold tracking-tight">
-            {settings.name}
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Navegação principal">

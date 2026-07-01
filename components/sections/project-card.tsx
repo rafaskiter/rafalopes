@@ -31,13 +31,13 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    <div className="sticky top-0 flex h-[100svh] items-center justify-center px-4 sm:px-6">
+    <div className="sticky top-0 flex h-[100svh] items-start justify-center px-4 sm:px-6">
       <motion.div
         style={{
           backgroundColor: project.color,
           color: ink,
           scale,
-          top: `calc(7vh + ${index * 24}px)`,
+          top: `calc(5.5rem + ${index * 16}px)`,
         }}
         className="relative w-full max-w-6xl origin-top overflow-hidden rounded-3xl shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
       >
