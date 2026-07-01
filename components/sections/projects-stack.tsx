@@ -22,6 +22,7 @@ export function ProjectsStack({ projects }: { projects: Project[] }) {
           index={i}
           total={projects.length}
           progress={scrollYProgress}
+          isLast={i === projects.length - 1}
         />
       ))}
     </div>
