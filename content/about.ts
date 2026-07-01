@@ -1,4 +1,9 @@
-import type { SkillGroup, TimelineEntry } from "@/types";
+import type {
+  Certification,
+  EducationEntry,
+  SkillGroup,
+  TimelineEntry,
+} from "@/types";
 
 /** Seção "Sobre" (intro escura, logo após o hero). */
 export const aboutIntro = {
@@ -6,8 +11,8 @@ export const aboutIntro = {
   heading:
     "Desenho experiências digitais onde estratégia, estética e tecnologia se encontram.",
   body: [
-    "Sou Rafa Lopes, designer de produto com mais de uma década dedicada a transformar problemas complexos em interfaces claras, humanas e memoráveis.",
-    "Gosto de trabalhar na interseção entre marca, produto e código, do conceito de uma identidade visual até a entrega de um design system vivo, sempre guiado por propósito e evidência.",
+    "Sou Rafa Lopes, designer de produto com mais de uma década de estrada, do design gráfico e do front-end até a experiência de produtos digitais.",
+    "Hoje sou Designer UX/UI Sênior no Instituto de Pesquisas Eldorado, trabalhando com interfaces homem-máquina, apps e design systems para marcas de grande porte.",
   ],
 } as const;
 
@@ -16,41 +21,47 @@ export const aboutMe = {
   eyebrow: "Quem está por trás",
   heading: "Curiosidade incansável, obsessão por detalhe.",
   body: [
-    "Pra mim, bom design é, antes de tudo, bom pensamento. Começo cada projeto ouvindo: pessoas, dados e contexto. Só então a forma aparece, e quando ela aparece, tem motivo.",
-    "Já liderei squads de produto, conduzi pesquisas com usuários, prototipei jogos e construí design systems adotados por times inteiros. Gosto de problemas grandes e de soluções simples.",
-    "Fora da tela, fotografo, viajo e junto boas histórias, que viram combustível para as ideias que mais tarde viram projeto.",
+    "Comecei em 2010 no design gráfico e no front-end, passei sete anos como designer autônomo (TwoMate Design) e, desde 2020, atuo com design de produto no Instituto de Pesquisas Eldorado, onde cresci de Júnior a Sênior.",
+    "Meu repertório vai de HMI automotivo (Volkswagen) a gamificação (CPFL) e locação digital (Porto Seguro Olho Mágico). Gosto de problemas grandes e de soluções simples.",
+    "Recém-concluí um MBA em Neurociência, Consumo e Marketing na PUCRS, que trouxe uma lente nova sobre comportamento e decisão para o meu trabalho.",
   ],
   photo: { seed: "rafa-lopes-portrait", label: "Rafa Lopes" },
 } as const;
 
+/** Experiência profissional (mais recente primeiro). */
 export const timeline: TimelineEntry[] = [
   {
-    period: "2021 até hoje",
-    role: "Lead Product Designer",
-    org: "Estúdio independente",
+    period: "2025 até hoje",
+    role: "Designer UX/UI Sênior",
+    org: "Instituto de Pesquisas Eldorado",
     description:
-      "Direção de design de produtos digitais para startups e marcas autorais, do discovery ao handoff.",
+      "Design de produto e interfaces homem-máquina (HMI) para clientes de grande porte.",
   },
   {
-    period: "2018 a 2021",
-    role: "Senior UX/UI Designer",
-    org: "Consultoria de inovação",
+    period: "2021 a 2025",
+    role: "Designer UX/UI Pleno",
+    org: "Instituto de Pesquisas Eldorado",
     description:
-      "Pesquisa, prototipação e design systems para clientes de varejo, finanças e saúde.",
+      "Volkswagen New Infotainment e CPFL Gamification App, entre outros produtos.",
   },
   {
-    period: "2015 a 2018",
-    role: "Designer Visual",
-    org: "Agência de branding",
-    description:
-      "Criação de identidades visuais, naming e direção de arte para campanhas multicanal.",
+    period: "2020 a 2021",
+    role: "Designer UX/UI Júnior",
+    org: "Instituto de Pesquisas Eldorado",
+    description: "Projetos Porto Seguro Olho Mágico e Riemann Labs.",
   },
   {
-    period: "2013 a 2015",
-    role: "Designer Júnior",
-    org: "Studio criativo",
+    period: "2013 a 2020",
+    role: "Designer (autônomo)",
+    org: "TwoMate Design",
     description:
-      "Primeiros passos em design digital, motion e ilustração para web.",
+      "Identidade visual, design gráfico e web para clientes diversos em São Paulo.",
+  },
+  {
+    period: "2010 a 2013",
+    role: "Designer Gráfico e Front-end",
+    org: "Grupo Fixa",
+    description: "Criação de sites e marcas e desenvolvimento front-end.",
   },
 ];
 
@@ -61,8 +72,8 @@ export const skills: SkillGroup[] = [
       "Product Design",
       "UX Research",
       "UI Design",
+      "Interfaces Homem-Máquina (HMI)",
       "Design System",
-      "Branding",
       "Prototipação",
     ],
   },
@@ -70,31 +81,67 @@ export const skills: SkillGroup[] = [
     title: "Estratégia",
     items: [
       "Design Thinking",
-      "Service Design",
-      "Workshops",
-      "Arquitetura de Informação",
-      "Métricas de produto",
+      "UX Strategy",
+      "Product Research",
+      "Design Ops",
+      "Tipografia",
     ],
   },
   {
     title: "Tecnologia",
     items: [
       "HTML & CSS",
-      "React / Next.js",
-      "Framer Motion",
+      "JavaScript",
+      "Unity / C#",
       "Design Tokens",
-      "Acessibilidade (WCAG)",
+      "Acessibilidade",
     ],
   },
 ];
 
 export const tools: string[] = [
   "Figma",
-  "Framer",
-  "Adobe CC",
+  "Adobe XD",
+  "Illustrator",
+  "Photoshop",
   "Blender",
-  "Spline",
+  "Unity",
   "Notion",
-  "Linear",
-  "Webflow",
+];
+
+/** Formação acadêmica (mais recente primeiro). */
+export const education: EducationEntry[] = [
+  {
+    period: "2024 a 2025",
+    course: "MBA em Neurociência, Consumo e Marketing",
+    org: "PUCRS",
+  },
+  {
+    period: "2018 a 2020",
+    course: "Tecnólogo em Jogos Digitais",
+    org: "Impacta Tecnologia",
+  },
+  {
+    period: "2014 a 2015",
+    course: "Programação para Jogos Digitais",
+    org: "Etec Guaracy Silveira",
+  },
+  {
+    period: "2011 a 2012",
+    course: "Design Gráfico (curso livre)",
+    org: "Escola Panamericana de Arte",
+  },
+  {
+    period: "2009 a 2010",
+    course: "Comunicação Visual (técnico)",
+    org: "Etec de Vila Formosa",
+  },
+];
+
+/** Licenças e certificados. */
+export const certifications: Certification[] = [
+  { name: "UX Strategy", org: "Mergo Escola de Design", year: "2021" },
+  { name: "Product Research", org: "Mergo Escola de Design", year: "2021" },
+  { name: "Design System & Ops", org: "Meiuca", year: "2021" },
+  { name: "Adobe XD: do básico aos protótipos", org: "Udemy", year: "2020" },
 ];

@@ -111,6 +111,18 @@ export interface TimelineEntry {
   description: string;
 }
 
+export interface EducationEntry {
+  period: string;
+  course: string;
+  org: string;
+}
+
+export interface Certification {
+  name: string;
+  org: string;
+  year: string;
+}
+
 export interface SkillGroup {
   title: string;
   items: string[];

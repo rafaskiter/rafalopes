@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
 import { buttonVariants } from "@/components/ui/button";
-import { aboutMe, timeline, skills, tools } from "@/content/about";
+import { aboutMe, timeline, skills, tools, education, certifications } from "@/content/about";
 import { settings, socials } from "@/content/settings";
 
 export function AboutMe() {
@@ -76,6 +76,45 @@ export function AboutMe() {
               </Reveal>
             ))}
           </ul>
+
+          {/* Formação */}
+          <Reveal>
+            <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
+              Formação
+            </h3>
+          </Reveal>
+          <ul className="space-y-px">
+            {education.map((entry, i) => (
+              <Reveal as="li" key={i} delay={0.04 * i}>
+                <div className="grid gap-1 border-t border-line py-5 sm:grid-cols-[8rem_1fr] sm:gap-6">
+                  <span className="text-sm text-muted">{entry.period}</span>
+                  <div>
+                    <p className="font-medium">{entry.course}</p>
+                    <p className="mt-1 text-sm text-muted">{entry.org}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </ul>
+
+          {/* Certificados */}
+          <Reveal>
+            <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
+              Certificados
+            </h3>
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {certifications.map((cert, i) => (
+              <Reveal key={cert.name} delay={0.04 * i}>
+                <div className="rounded-lg border border-line p-4">
+                  <p className="font-medium">{cert.name}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    {cert.org} · {cert.year}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
 
           {/* Skills */}
           <Reveal>
