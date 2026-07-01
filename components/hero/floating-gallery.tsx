@@ -18,14 +18,14 @@ import { Media } from "@/components/placeholder/media";
  * (cantos), evitando poluir o centro onde fica o texto.
  */
 const layout = [
-  { x: 5, y: 14, w: 204, depth: 1.4, ratio: "1/1" as const, mobile: true },
-  { x: 76, y: 10, w: 220, depth: 1.0, ratio: "4/3" as const, mobile: true },
-  { x: 63, y: 60, w: 240, depth: 1.7, ratio: "1/1" as const, mobile: true },
-  { x: 13, y: 63, w: 208, depth: 1.2, ratio: "4/3" as const, mobile: true },
-  { x: 85, y: 44, w: 176, depth: 2.1, ratio: "3/4" as const, mobile: false },
-  { x: 38, y: 4, w: 158, depth: 0.8, ratio: "1/1" as const, mobile: false },
-  { x: 0, y: 40, w: 160, depth: 2.3, ratio: "1/1" as const, mobile: false },
-  { x: 47, y: 74, w: 188, depth: 1.5, ratio: "4/3" as const, mobile: false },
+  { x: 4, y: 13, w: 240, depth: 1.4, ratio: "1/1" as const, mobile: true },
+  { x: 74, y: 9, w: 258, depth: 1.0, ratio: "4/3" as const, mobile: true },
+  { x: 62, y: 60, w: 282, depth: 1.7, ratio: "1/1" as const, mobile: true },
+  { x: 12, y: 63, w: 244, depth: 1.2, ratio: "4/3" as const, mobile: true },
+  { x: 84, y: 43, w: 206, depth: 2.1, ratio: "3/4" as const, mobile: false },
+  { x: 37, y: 3, w: 186, depth: 0.8, ratio: "1/1" as const, mobile: false },
+  { x: -1, y: 40, w: 188, depth: 2.3, ratio: "1/1" as const, mobile: false },
+  { x: 46, y: 75, w: 220, depth: 1.5, ratio: "4/3" as const, mobile: false },
 ];
 
 /** Amplitude (px) do deslocamento por unidade de profundidade. */
@@ -112,7 +112,7 @@ function FloatingItem({
       style={{
         left: `${pos.x}%`,
         top: `${pos.y}%`,
-        width: `clamp(104px, 18vw, ${pos.w}px)`,
+        width: `clamp(120px, 21vw, ${pos.w}px)`,
         x: tx,
         y: ty,
         rotate,

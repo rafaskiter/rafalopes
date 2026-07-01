@@ -2,7 +2,7 @@ import type { Project } from "@/types";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
-import { Media } from "@/components/placeholder/media";
+import { CaseMedia } from "@/components/case/case-media";
 
 export function CaseHero({ project }: { project: Project }) {
   return (
@@ -30,18 +30,15 @@ export function CaseHero({ project }: { project: Project }) {
 
       <Container className="mt-14">
         <Reveal>
-          <div className="overflow-hidden rounded-xl">
-            <Media
-              seed={project.cover.seed}
-              src={project.cover.src}
-              alt={project.cover.alt}
-              fit={project.cover.fit}
-              category={project.category}
-              ratio="16/9"
-              rounded={false}
-              sizes="(max-width: 1280px) 100vw, 1200px"
-            />
-          </div>
+          <CaseMedia
+            seed={project.cover.seed}
+            src={project.cover.src}
+            alt={project.cover.alt}
+            fit={project.cover.fit}
+            category={project.category}
+            ratio="16/9"
+            sizes="(max-width: 1280px) 100vw, 1200px"
+          />
         </Reveal>
       </Container>
     </header>

@@ -9,22 +9,21 @@ import {
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/types";
 import { Media } from "@/components/placeholder/media";
-import { cn, readableOn } from "@/lib/utils";
+import { readableOn } from "@/lib/utils";
 
 interface StackCardProps {
   project: Project;
   index: number;
   total: number;
   progress: MotionValue<number>;
-  isLast?: boolean;
 }
 
 /**
  * Card grande no estilo "sticky stacking" (inspirado na clou.ch): cada card
- * gruda no topo e o seguinte desliza por cima enquanto o anterior encolhe.
- * O último card usa um slot curto (sem 100svh) para não deixar vão embaixo.
+ * fica centralizado na tela e o seguinte desliza por cima enquanto o anterior
+ * encolhe. O leve offset por índice cria o "empilhamento" visível no topo.
  */
-export function StackCard({ project, index, total, progress, isLast }: StackCardProps) {
+export function StackCard({ project, index, total, progress }: StackCardProps) {
   const ink = readableOn(project.color);
   const muted = ink === "#0a0a0a" ? "rgba(10,10,10,0.62)" : "rgba(255,255,255,0.72)";
 
@@ -33,16 +32,15 @@ export function StackCard({ project, index, total, progress, isLast }: StackCard
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    <div
-      className={cn(
-        "sticky top-0 flex items-start justify-center px-4 sm:px-6",
-        isLast ? "pb-[6vh]" : "h-[100svh]",
-      )}
-      style={{ paddingTop: `calc(5.5rem + ${index * 16}px)` }}
-    >
+    <div className="sticky top-0 flex h-[100svh] items-center justify-center px-4 sm:px-6">
       <motion.div
-        style={{ backgroundColor: project.color, color: ink, scale }}
-        className="w-full max-w-6xl origin-top overflow-hidden rounded-3xl shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
+        style={{
+          backgroundColor: project.color,
+          color: ink,
+          scale,
+          top: `${index * 16}px`,
+        }}
+        className="relative w-full max-w-6xl origin-top overflow-hidden rounded-3xl shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
       >
         <Link
           href={`/projetos/${project.slug}`}

@@ -7,7 +7,7 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        solid: "bg-ink text-on-dark hover:bg-ink-hover",
+        solid: "bg-acid text-ink hover:bg-acid-hover",
         outline:
           "border border-ink/20 text-ink hover:border-ink hover:bg-ink hover:text-on-dark",
         ghost: "text-ink hover:bg-ink/5",

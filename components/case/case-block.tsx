@@ -1,7 +1,7 @@
 import type { CaseBlock as CaseBlockType, Category } from "@/types";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
-import { Media } from "@/components/placeholder/media";
+import { CaseMedia } from "@/components/case/case-media";
 import { cn } from "@/lib/utils";
 
 function BlockHeading({ block }: { block: CaseBlockType }) {
@@ -70,7 +70,7 @@ export function CaseBlock({
             </div>
             {media[0] && (
               <Reveal delay={0.1}>
-                <Media
+                <CaseMedia
                   seed={media[0].seed}
                   src={media[0].src}
                   alt={media[0].alt}
@@ -98,7 +98,7 @@ export function CaseBlock({
           )}
           {media[0] && (
             <Reveal>
-              <Media
+              <CaseMedia
                 seed={media[0].seed}
                 src={media[0].src}
                 alt={media[0].alt}
@@ -136,7 +136,7 @@ export function CaseBlock({
           >
             {media.map((m, i) => (
               <Reveal key={m.seed} delay={0.04 * i}>
-                <Media
+                <CaseMedia
                   seed={m.seed}
                   src={m.src}
                   alt={m.alt}

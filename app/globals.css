@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * Tokens de tema — design system da marca Rafa Lopes (Figma).          *
- * Canvas lime-creme, tinta roxo-escuro, acento coral-pink.             *
- * Fontes: Fredoka (display) + Urbanist (texto).                        *
+ * Tokens de tema — design system Rafa Lopes (paleta tech).             *
+ * Canvas lime-creme, tinta azul-escuro, botões verde-ácido.            *
+ * Fontes: Corben (display) + Urbanist (texto).                         *
  * ------------------------------------------------------------------ */
 :root {
   --bg: #f6f9e4; /* canvas (creme mais claro e menos saturado) */
   --bg-elevated: #ffffff; /* surface */
   --surface: #fbfdef; /* cream claro */
-  --ink: #3b1a47; /* roxo escuro: títulos, bandas escuras, botões */
-  --ink-hover: #5c3470; /* roxo mais claro (hover do botão primary) */
+  --ink: #100325; /* azul-escuro: títulos, bandas escuras */
+  --ink-hover: #241653; /* azul um pouco mais claro */
   --ink-soft: #333333; /* parágrafos (cinza escuro) */
   --muted: #333333; /* parágrafos / texto secundário (cinza escuro) */
   --faint: #8a8a8a; /* metadados / labels pequenos */
-  --line: #e3d9e8; /* borda (purple/100) */
-  --accent: #ff5c8a; /* coral-pink (accent primary) */
-  --cyan: #00e5db; /* accent secondary */
-  --lime: #b6ff1a; /* accent positive */
-  --gold: #d4c82e; /* accent warning */
-  --on-dark: #f8ffe8; /* texto sobre roxo */
-  --muted-on-dark: #c9b5d2; /* purple/200 */
+  --line: #e0e3d2; /* borda */
+  --accent: #ff5c8a; /* coral-pink (eyebrows / detalhes) */
+  --acid: #c8ff00; /* verde-ácido (botões) */
+  --acid-hover: #b6ec00; /* hover do botão */
+  --cyan: #00e5db;
+  --blue-glow: #4da6ff; /* azul claro do gradiente do hero */
+  --on-dark: #f4f7ea; /* texto sobre azul-escuro */
+  --muted-on-dark: #9aa3c8; /* azul-acinzentado claro */
   --line-on-dark: rgba(255, 255, 255, 0.14);
 
   --radius: 24px; /* cards / mídia (md) */
@@ -41,9 +42,9 @@
   --color-faint: var(--faint);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-acid: var(--acid);
+  --color-acid-hover: var(--acid-hover);
   --color-cyan: var(--cyan);
-  --color-lime: var(--lime);
-  --color-gold: var(--gold);
   --color-on-dark: var(--on-dark);
   --color-muted-on-dark: var(--muted-on-dark);
 
