@@ -69,18 +69,37 @@ export const projects: Project[] = [
         ],
       },
       {
-        id: "processo",
-        layout: "wide-media",
-        eyebrow: "Processo",
-        heading: "Da escuta ao protótipo",
+        id: "desafio",
+        layout: "split",
+        eyebrow: "Desafio",
+        heading: "Como nós podemos?",
         body: [
-          "Conduzimos a descoberta com workshops e pesquisa qualitativa, priorizando dores com imobiliárias e inquilinos antes de desenhar qualquer tela.",
+          "Antes de qualquer tela, enquadramos o problema como declarações de \"Como Nós Podemos\", votadas com o time e com a Porto Seguro.",
+          "Os temas vencedores mostraram onde doía: comunicação e interdependência de atividades, recadastramento de dados, dependência de empresas externas e relatórios.",
         ],
         media: [
           {
-            seed: "olho-magico-artefatos",
-            src: "/cases/olho-magico/artefatos.png",
-            alt: "Artefatos do processo: workshop de ideação e priorização de dores",
+            seed: "olho-magico-ideacao-desafio",
+            src: "/cases/olho-magico/ideacao-desafio.png",
+            alt: "Frame do desafio no workshop: declarações Como Nós Podemos votadas",
+            ratio: "16/9",
+            fit: "contain",
+          },
+        ],
+      },
+      {
+        id: "ideacao",
+        layout: "wide-media",
+        eyebrow: "Workshop de ideação",
+        heading: "Do post-it à prioridade",
+        body: [
+          "Facilitei um workshop remoto com a Porto Seguro: desafio, ideação livre, agrupamento de ideias e uma matriz de priorização cruzando inovação com viabilidade técnica. Saímos com um backlog priorizado de verdade, não com uma parede de post-its.",
+        ],
+        media: [
+          {
+            seed: "olho-magico-ideacao-workshop",
+            src: "/cases/olho-magico/ideacao-workshop.png",
+            alt: "Board completo do workshop de ideação: desafio, ideação, agrupamento e matriz de priorização",
             ratio: "21/9",
             fit: "contain",
           },
@@ -98,6 +117,24 @@ export const projects: Project[] = [
           { title: "Relatórios e insights", description: "Síntese da pesquisa em achados acionáveis para o produto." },
           { title: "Protótipos", description: "Baixa e alta fidelidade para validar fluxos antes de construir." },
           { title: "Testes de usabilidade", description: "Validação com usuários reais a cada iteração." },
+        ],
+      },
+      {
+        id: "marca",
+        layout: "wide-media",
+        eyebrow: "Marca",
+        heading: "Alugar que muda tudo",
+        body: [
+          "A identidade traduz a promessa do produto: um roxo vibrante, paleta viva e a tipografia Axiforma, com endosso da Porto Seguro e do Zap. As orientações de uso garantiram consistência do app ao material comercial.",
+        ],
+        media: [
+          {
+            seed: "olho-magico-marca",
+            src: "/cases/olho-magico/marca.png",
+            alt: "Orientações de uso da marca Olho Mágico: logotipo, tagline, paleta de cores e tipografia",
+            ratio: "16/9",
+            fit: "cover",
+          },
         ],
       },
       {
@@ -161,6 +198,69 @@ export const projects: Project[] = [
             seed: "olho-magico-app",
             src: "/cases/olho-magico/app.png",
             alt: "Telas do app do inquilino: login, home e histórico de pagamentos",
+            ratio: "4/3",
+            fit: "contain",
+          },
+        ],
+      },
+      {
+        id: "app-detalhe",
+        layout: "media-grid",
+        eyebrow: "App em detalhe",
+        heading: "Clareza até no boleto",
+        body: [
+          "Três momentos que resumem o cuidado com o inquilino: primeiro acesso sem fricção, a home avisando com franqueza quando há pagamento em atraso e a fatura aberta item a item, do aluguel à conta de água.",
+        ],
+        media: [
+          {
+            seed: "olho-magico-app-login",
+            src: "/cases/olho-magico/app-login.png",
+            alt: "Tela de login do app Olho Mágico",
+            ratio: "3/4",
+            fit: "contain",
+            label: "Primeiro acesso",
+          },
+          {
+            seed: "olho-magico-app-home",
+            src: "/cases/olho-magico/app-home.png",
+            alt: "Home do app com aviso de pagamentos em atraso",
+            ratio: "3/4",
+            fit: "contain",
+            label: "Gestão de inadimplência",
+          },
+          {
+            seed: "olho-magico-app-pagamentos",
+            src: "/cases/olho-magico/app-pagamentos.png",
+            alt: "Histórico de pagamentos com fatura detalhada: aluguel, IPTU, condomínio e água",
+            ratio: "3/4",
+            fit: "contain",
+            label: "Fatura transparente",
+          },
+        ],
+      },
+      {
+        id: "testes-numeros",
+        layout: "metrics",
+        metrics: [
+          { value: "5", label: "Imobiliárias no teste de usabilidade" },
+          { value: "12", label: "Tarefas avaliadas por usuário" },
+          { value: "7", label: "Tarefas com 100% de sucesso" },
+        ],
+      },
+      {
+        id: "testes",
+        layout: "wide-media",
+        eyebrow: "Testes de usabilidade",
+        heading: "Testar, aprender, ajustar",
+        body: [
+          "Testamos o sistema com cinco imobiliárias reais, tarefa por tarefa, registrando sucesso, dúvida e falha com os comentários de cada usuário.",
+          "Cada falha virou decisão de design: as notificações saíram de dentro dos cards e ganharam um ponto de configuração junto dos boletos, e o histórico de pagamentos ganhou um modal na versão desktop.",
+        ],
+        media: [
+          {
+            seed: "olho-magico-teste-usabilidade",
+            src: "/cases/olho-magico/teste-usabilidade.png",
+            alt: "Relatório do teste de usabilidade com imobiliárias: matriz de tarefas, comentários e soluções",
             ratio: "4/3",
             fit: "contain",
           },
