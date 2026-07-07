@@ -206,6 +206,30 @@ export function CaseBlock({
         </Container>
       );
 
+    case "icons":
+      return (
+        <Container className="py-[clamp(3rem,7vh,6rem)]">
+          {(block.heading || block.body) && (
+            <div className="mb-10 max-w-3xl">
+              <BlockHeading block={block} />
+              <div className="mt-6">
+                <Body body={block.body} />
+              </div>
+            </div>
+          )}
+          <div className="grid grid-cols-4 gap-3 sm:grid-cols-6 sm:gap-4 lg:grid-cols-10">
+            {block.icons?.map((icon, i) => (
+              <Reveal key={icon} delay={0.02 * i}>
+                <div className="flex aspect-square items-center justify-center rounded-lg border border-line bg-bg-elevated p-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={icon} alt="" className="h-full w-full object-contain" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      );
+
     default:
       return null;
   }

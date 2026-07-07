@@ -422,6 +422,220 @@ export const projects: Project[] = [
     ],
   },
 
+  // 3 — SamMANAGER (Samtronic) [Saúde/HMI] ------------------------------------
+  {
+    slug: "sammanager",
+    title: "SamMANAGER",
+    client: "Samtronic",
+    category: "UX Design",
+    type: "produto",
+    year: 2020,
+    featured: true,
+    summary:
+      "Central de monitoramento de bombas de infusão para gerenciar até 25 leitos, à distância e em tempo real.",
+    intro:
+      "Como um enfermeiro cuida de 25 leitos ao mesmo tempo sem perder o alarme que importa? O SamMANAGER coloca a UTI inteira em uma tela.",
+    role: ["UX/UI Designer", "Concepção de telas", "Design de ícones"],
+    services: ["UX Research", "UI Design", "Design System", "Ícones"],
+    cover: {
+      seed: "sammanager-cover",
+      src: "/cases/sammanager/cover.png",
+      alt: "Enfermeira monitorando 25 leitos no dashboard do SamMANAGER em um tablet",
+      ratio: "16/9",
+      fit: "cover",
+      category: "UX Design",
+    },
+    card: {
+      seed: "sammanager-card",
+      src: "/cases/sammanager/cover.png",
+      alt: "Dashboard do SamMANAGER em um tablet",
+      fit: "cover",
+      category: "UX Design",
+    },
+    color: "#0f7a3c",
+    blocks: [
+      {
+        id: "resumo",
+        layout: "text",
+        eyebrow: "Resumo",
+        heading: "A UTI inteira em uma tela",
+        body: [
+          "O SamMANAGER é a central de monitoramento da Samtronic para as bombas de infusão. À distância e em tempo real, a equipe acompanha a terapia de cada paciente, antecipa o fim da infusão e silencia alarmes sem sair do posto.",
+          "Participei da concepção das telas, buscando formas de visualização que deixassem os enfermeiros de olho nas bombas sem se afogar em informação.",
+        ],
+      },
+      {
+        id: "contexto",
+        layout: "text",
+        eyebrow: "Contexto",
+        heading: "Cada segundo conta",
+        body: [
+          "Numa UTI, uma bomba com bateria crítica ou terapia interrompida é urgência. Mas os alarmes tocam nos equipamentos, longe de quem precisa agir, e um leito pode ter até 8 bombas rodando ao mesmo tempo.",
+          "O desafio era dar à equipe uma visão única, priorizada e confiável, que funcionasse tanto na correria de 25 leitos quanto no detalhe de uma única bomba.",
+        ],
+      },
+      {
+        id: "pesquisa",
+        layout: "text",
+        eyebrow: "Pesquisa",
+        heading: "Ouvindo quem está na ponta",
+        body: [
+          "Aplicamos questionários em diversos setores hospitalares, com criticidades e rotinas diferentes, para entender onde estavam as dores no manejo das bombas.",
+          "A pesquisa guiou o que a central deveria mostrar de fato: os dados e recursos que os profissionais mais queriam ver, e não os que eram fáceis de exibir.",
+        ],
+      },
+      {
+        id: "leitos",
+        layout: "wide-media",
+        eyebrow: "Visualização por leitos",
+        heading: "Um card por paciente",
+        body: [
+          "Cada card é um leito: nome, sexo, idade e o progresso de cada droga em infusão, com até 8 bombas por paciente. Quando algo foge do esperado, o card inteiro muda de cor (vermelho para alta prioridade, amarelo para média) e mostra o alarme com um ícone claro.",
+        ],
+        media: [
+          {
+            seed: "sammanager-leitos",
+            src: "/cases/sammanager/dashboard-leitos.png",
+            alt: "Dashboard por leitos: grade de 25 pacientes com barras de infusão e alarmes",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
+      },
+      {
+        id: "adaptativo",
+        layout: "split",
+        eyebrow: "Layout adaptativo",
+        heading: "Quanto menos leitos, mais detalhe",
+        body: [
+          "O dashboard reconhece automaticamente quantos pacientes estão ativos e reorganiza a grade: 6, 9, 16, 20 ou 25 leitos. Com menos leitos, os cards crescem e mostram mais informação; leitos vazios viram cards vazios.",
+          "Assim a mesma tela serve tanto para uma UTI lotada quanto para um setor com poucos pacientes, sempre legível a distância.",
+        ],
+        media: [
+          {
+            seed: "sammanager-6leitos",
+            src: "/cases/sammanager/dashboard-6leitos.png",
+            alt: "Dashboard com 6 leitos: cards maiores e mais detalhados",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
+      },
+      {
+        id: "numeros",
+        layout: "metrics",
+        metrics: [
+          { value: "25", label: "Leitos monitorados em uma tela" },
+          { value: "8", label: "Bombas por leito" },
+          { value: "2", label: "Modos: por leitos e por equipamentos" },
+        ],
+      },
+      {
+        id: "equipamentos",
+        layout: "wide-media",
+        eyebrow: "Por equipamentos + Light mode",
+        heading: "Priorize as bombas que pedem atenção",
+        body: [
+          "No modo por equipamentos, a coluna central destaca as bombas mais críticas e a lateral lista até 80 bombas, ordenadas por prioridade (vermelho, amarelo, verde, cinza). Desenhamos também um modo claro (light) para a equipe escolher o que funciona melhor no ambiente.",
+        ],
+        media: [
+          {
+            seed: "sammanager-equipamentos",
+            src: "/cases/sammanager/light-equipamentos.png",
+            alt: "Modo claro por equipamentos com lista lateral de bombas ordenada por prioridade",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
+      },
+      {
+        id: "detalhe",
+        layout: "wide-media",
+        eyebrow: "Detalhe do paciente",
+        heading: "Do panorama à bomba",
+        body: [
+          "Um toque em qualquer card abre o paciente: todas as bombas ativas no leito e os parâmetros da bomba selecionada (modo de vazão, KVO, oclusão, volume). É daqui que o alarme é resolvido, com três ações claras: silenciar, reconhecer e reiniciar.",
+        ],
+        media: [
+          {
+            seed: "sammanager-detalhe",
+            src: "/cases/sammanager/paciente-detalhe.png",
+            alt: "Tela de detalhe do paciente com bombas ativas, parâmetros e ações de alarme",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
+      },
+      {
+        id: "acoes",
+        layout: "list",
+        eyebrow: "Alarmes",
+        heading: "Três ações, sem ambiguidade",
+        list: [
+          { title: "Silenciar", description: "Pausa temporária do alarme, confirmada pela bomba antes de valer." },
+          { title: "Reconhecer", description: "Desativa o alarme por completo depois da confirmação." },
+          { title: "Reiniciar", description: "Reseta todos os alarmes do leito de uma vez." },
+        ],
+      },
+      {
+        id: "icones",
+        layout: "icons",
+        eyebrow: "Ícones",
+        heading: "Uma linguagem visual própria",
+        body: [
+          "Desenhei toda a biblioteca de ícones do produto: alarmes, tipos de infusão, estados das bombas e ações. Traços consistentes que precisam ser lidos num relance, mesmo à distância.",
+        ],
+        icons: [
+          "/cases/sammanager/icones/Ativo 35.svg",
+          "/cases/sammanager/icones/Ativo 36.svg",
+          "/cases/sammanager/icones/Ativo 37.svg",
+          "/cases/sammanager/icones/Ativo 38.svg",
+          "/cases/sammanager/icones/Ativo 39.svg",
+          "/cases/sammanager/icones/Ativo 40.svg",
+          "/cases/sammanager/icones/Ativo 41.svg",
+          "/cases/sammanager/icones/Ativo 42.svg",
+          "/cases/sammanager/icones/Ativo 43.svg",
+          "/cases/sammanager/icones/Ativo 44.svg",
+          "/cases/sammanager/icones/Ativo 45.svg",
+          "/cases/sammanager/icones/Ativo 46.svg",
+          "/cases/sammanager/icones/Ativo 47.svg",
+          "/cases/sammanager/icones/Ativo 48.svg",
+          "/cases/sammanager/icones/Ativo 49.svg",
+          "/cases/sammanager/icones/Ativo 50.svg",
+          "/cases/sammanager/icones/Ativo 51.svg",
+          "/cases/sammanager/icones/Ativo 52.svg",
+          "/cases/sammanager/icones/Ativo 53.svg",
+          "/cases/sammanager/icones/Ativo 54.svg",
+        ],
+      },
+      {
+        id: "sistema",
+        layout: "wide-media",
+        eyebrow: "Sistema de gestão",
+        heading: "Cadastro e gestão no computador",
+        body: [
+          "Além da central, o SamMANAGER tem um sistema web para cadastrar bombas e usuários, com grupos de acesso, relatórios e engenharia clínica. Um cadastro de bomba amarra identificação, IP, setor, ala e leito, o que faz o leito certo aparecer no lugar certo do dashboard.",
+        ],
+        media: [
+          {
+            seed: "sammanager-sistema",
+            src: "/cases/sammanager/sistema-mock.png",
+            alt: "Sistema web do SamMANAGER: gestão de usuários e grupos de acesso",
+            ratio: "16/9",
+            fit: "cover",
+          },
+        ],
+      },
+      {
+        id: "fecho",
+        layout: "quote",
+        quote: {
+          text: "Monitorar 25 leitos não pode ser um quebra-cabeça. O SamMANAGER transforma um mar de bombas em prioridades claras, para a equipe agir no que importa.",
+        },
+      },
+    ],
+  },
+
   // 2 — Branding -------------------------------------------------------------
   {
     slug: "raiz-cafe",

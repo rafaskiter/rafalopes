@@ -55,7 +55,8 @@ export type CaseBlockLayout =
   | "split"
   | "quote"
   | "metrics"
-  | "list";
+  | "list"
+  | "icons";
 
 /** Bloco genérico de conteúdo de um case — renderizado pelos componentes de case. */
 export interface CaseBlock {
@@ -68,6 +69,8 @@ export interface CaseBlock {
   metrics?: CaseMetric[];
   list?: CaseListItem[];
   quote?: { text: string; author?: string };
+  /** Caminhos de SVGs (em /public) para o layout "icons". */
+  icons?: string[];
 }
 
 export interface Project {
