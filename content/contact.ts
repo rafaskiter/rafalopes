@@ -10,6 +10,6 @@ export const contact = {
     email: { label: "E-mail", placeholder: "seu@email.com" },
     message: { label: "Mensagem", placeholder: "Conte um pouco sobre o projeto…" },
     submit: "Enviar mensagem",
-    success: "Obrigado! Sua mensagem foi preparada no seu cliente de e-mail.",
+    success: "Mensagem enviada! Respondo em breve.",
   },
 } as const;

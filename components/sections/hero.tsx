@@ -7,7 +7,7 @@ import { FloatingGallery } from "@/components/hero/floating-gallery";
 export function Hero() {
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 pt-[var(--header-h,4.5rem)] text-on-dark sm:px-6"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 text-on-dark sm:px-6"
       style={{
         background:
           "radial-gradient(135% 95% at 50% 112%, rgba(77,166,255,0.55) 0%, rgba(77,166,255,0.16) 28%, rgba(16,3,37,0) 58%), #100325",

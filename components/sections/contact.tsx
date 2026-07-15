@@ -7,17 +7,19 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
 import { contactSchema } from "@/lib/validations";
 import { contact } from "@/content/contact";
-import { settings } from "@/content/settings";
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
 export function Contact() {
   const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [apiError, setApiError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     const parsed = contactSchema.safeParse({
       name: data.get("name"),
       email: data.get("email"),
@@ -34,12 +36,30 @@ export function Contact() {
     }
 
     setErrors({});
-    const { name, email, message } = parsed.data;
-    // Integração futura: POST /api/contact (Resend). Por ora, mailto.
-    window.location.href = `mailto:${settings.email}?subject=${encodeURIComponent(
-      `Contato do portfólio de ${name}`,
-    )}&body=${encodeURIComponent(`${message}\n\nEnviado por ${name} (${email})`)}`;
-    setSuccess(true);
+    setApiError("");
+    setSending(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parsed.data),
+      });
+
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        throw new Error(json.error || "Erro ao enviar mensagem.");
+      }
+
+      setSuccess(true);
+      form.reset();
+    } catch (err) {
+      setApiError(
+        err instanceof Error ? err.message : "Erro ao enviar. Tente novamente.",
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   const field =
@@ -80,12 +100,17 @@ export function Contact() {
               <textarea id="message" name="message" rows={4} className={field} placeholder={contact.form.message.placeholder} />
               {errors.message && <p className="mt-2 text-sm text-accent">{errors.message}</p>}
             </div>
-            <Button type="submit" size="lg">
-              {contact.form.submit}
+            <Button type="submit" size="lg" disabled={sending}>
+              {sending ? "Enviando…" : contact.form.submit}
             </Button>
             {success && (
               <p className="text-sm text-muted" role="status">
                 {contact.form.success}
+              </p>
+            )}
+            {apiError && (
+              <p className="text-sm text-accent" role="alert">
+                {apiError}
               </p>
             )}
           </form>

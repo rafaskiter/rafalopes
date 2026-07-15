@@ -73,7 +73,7 @@ export function StackCard({ project, index, total, progress }: StackCardProps) {
                   </li>
                 ))}
               </ul>
-              <h3 className="font-display text-[2.25rem] leading-[1] tracking-tight sm:text-6xl lg:text-7xl">
+              <h3 className="break-words font-display text-[clamp(1.75rem,8vw,2.25rem)] leading-[1] tracking-tight sm:text-5xl lg:text-7xl">
                 {project.title}
               </h3>
               <p className="mt-4 max-w-md text-pretty text-base sm:mt-5 sm:text-xl" style={{ color: muted }}>

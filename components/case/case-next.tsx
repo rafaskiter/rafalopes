@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { Project } from "@/types";
-import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
+import { Media } from "@/components/placeholder/media";
 
 export function CaseNext({ project }: { project: Project }) {
   return (
@@ -28,11 +28,15 @@ export function CaseNext({ project }: { project: Project }) {
             whileHover={{ scale: 1.03 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <SeededPlaceholder
+            <Media
               seed={project.cover.seed}
+              src={project.cover.src}
+              alt={project.cover.alt}
+              fit={project.cover.fit}
               category={project.category}
               ratio="4/3"
               rounded={false}
+              sizes="320px"
             />
           </motion.div>
         </div>

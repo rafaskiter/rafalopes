@@ -27,7 +27,7 @@ export const nav: NavItem[] = [
 ];
 
 export const socials: SocialLink[] = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/rafaskiter" },
   { label: "Instagram", href: "https://www.instagram.com/" },
   { label: "Behance", href: "https://www.behance.net/" },
   { label: "Dribbble", href: "https://dribbble.com/" },
