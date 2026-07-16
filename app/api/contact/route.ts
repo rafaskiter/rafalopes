@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -16,6 +16,7 @@ export async function POST(request: Request) {
   }
 
   const { name, email, message } = parsed.data;
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const { error } = await resend.emails.send({
     from: "Portfólio <onboarding@resend.dev>",
