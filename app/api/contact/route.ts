@@ -16,17 +16,22 @@ export async function POST(request: Request) {
   }
 
   const { name, email, message } = parsed.data;
-  const resend = new Resend(process.env.RESEND_API_KEY);
 
-  const { error } = await resend.emails.send({
-    from: "Portfólio <onboarding@resend.dev>",
-    to: "skiter.rafael@gmail.com",
-    replyTo: email,
-    subject: `Contato do portfólio: ${name}`,
-    text: `Nome: ${name}\nE-mail: ${email}\n\n${message}`,
-  });
+  // O SDK lança (em vez de retornar erro) quando a chave falta ou a rede falha.
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-  if (error) {
+    const { error } = await resend.emails.send({
+      from: "Portfólio <onboarding@resend.dev>",
+      to: "skiter.rafael@gmail.com",
+      replyTo: email,
+      subject: `Contato do portfólio: ${name}`,
+      text: `Nome: ${name}\nE-mail: ${email}\n\n${message}`,
+    });
+
+    if (error) throw new Error(error.message);
+  } catch (err) {
+    console.error("[contact] falha ao enviar e-mail:", err);
     return NextResponse.json(
       { error: "Erro ao enviar mensagem. Tente novamente." },
       { status: 500 },
