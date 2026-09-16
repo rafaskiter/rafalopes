@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, settings } from "@/content/settings";
+import { LogoColor } from "@/components/icons/logo-color";
 import { LogoOutline } from "@/components/icons/logo-outline";
 import { cn } from "@/lib/utils";
 
@@ -60,14 +60,7 @@ export function Header() {
             {onDarkHero ? (
               <LogoOutline className="h-full w-full text-on-dark" />
             ) : (
-              <Image
-                src="/brand/logo@2x.png"
-                alt={settings.fullName}
-                width={2179}
-                height={2026}
-                priority
-                className="h-full w-full object-contain"
-              />
+              <LogoColor className="h-full w-full" />
             )}
           </span>
         </Link>
