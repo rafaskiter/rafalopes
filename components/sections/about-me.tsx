@@ -5,11 +5,16 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { aboutMe, timeline, skills, tools, education, certifications } from "@/content/about";
-import { socials } from "@/content/settings";
+import { contact } from "@/content/contact";
+import { settings, socials } from "@/content/settings";
 
 export function AboutMe() {
   const linkedin = socials.find((s) => s.label === "LinkedIn")?.href ?? "#";
+  const whatsappHref = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(
+    contact.whatsappMessage,
+  )}`;
 
   return (
     <Section id="sobre" className="border-t border-line">
@@ -30,6 +35,14 @@ export function AboutMe() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                className={buttonVariants({ variant: "solid" })}
+              >
+                <WhatsAppIcon /> {contact.whatsappLabel}
+              </a>
               <Link
                 href={linkedin}
                 target="_blank"
