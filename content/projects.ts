@@ -425,7 +425,9 @@ export const projects: Project[] = [
   // 3 — SamMANAGER (Samtronic) [Saúde/HMI] ------------------------------------
   {
     slug: "sammanager",
-    title: "SamMANAGER",
+    // Com espaço: sem ele o nome não tem onde quebrar e vaza da tela no
+    // título do case. Nos textos corridos a grafia original é mantida.
+    title: "Sam MANAGER",
     client: "Samtronic",
     category: "UX Design",
     type: "produto",

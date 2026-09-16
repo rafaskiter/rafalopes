@@ -66,7 +66,7 @@ export function Contact() {
     "w-full border-0 border-b border-line bg-transparent py-3 text-lg outline-none transition-colors placeholder:text-muted/60 focus:border-ink";
 
   return (
-    <Section id="contato" className="border-t border-line">
+    <Section id="contato" className="border-t border-line bg-bg-elevated">
       <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div>
           <SectionHeading eyebrow={contact.eyebrow} title={contact.heading} size="xl" />
@@ -100,7 +100,13 @@ export function Contact() {
               <textarea id="message" name="message" rows={4} className={field} placeholder={contact.form.message.placeholder} />
               {errors.message && <p className="mt-2 text-sm text-accent">{errors.message}</p>}
             </div>
-            <Button type="submit" size="lg" disabled={sending}>
+            {/* Seção de fundo claro: o ácido puro não se separa do branco. */}
+            <Button
+              type="submit"
+              size="lg"
+              disabled={sending}
+              className="bg-acid-deep hover:bg-acid-deep-hover"
+            >
               {sending ? "Enviando…" : contact.form.submit}
             </Button>
             {success && (
