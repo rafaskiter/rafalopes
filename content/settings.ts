@@ -15,7 +15,7 @@ export const settings = {
   whatsapp: "5511964675546",
   location: "Brasil · Remoto",
   /** URL pública — usada em metadados, canonical e sitemap. */
-  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://rafalopes.vercel.app",
+  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://rafalopes-seven.vercel.app",
   /** Substituir pelos links reais quando disponíveis. */
   cvUrl: "/cv-rafa-lopes.pdf",
 } as const;
