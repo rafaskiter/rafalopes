@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import type { Category, Ratio } from "@/types";
+import type { Category, Locale, Ratio } from "@/types";
+import { getContent } from "@/content/dictionary";
 import { Media } from "@/components/placeholder/media";
 
 interface CaseMediaProps {
@@ -15,13 +16,15 @@ interface CaseMediaProps {
   label?: string;
   fit?: "cover" | "contain";
   sizes?: string;
+  locale: Locale;
 }
 
 /**
  * Mídia de case: aumenta um pouco no hover e, quando há imagem real, permite
  * ampliar em tela cheia ao clicar/tocar (lightbox). Sem src, é só o placeholder.
  */
-export function CaseMedia({ seed, src, alt, category, ratio = "4/3", label, fit, sizes }: CaseMediaProps) {
+export function CaseMedia({ seed, src, alt, category, ratio = "4/3", label, fit, sizes, locale }: CaseMediaProps) {
+  const { ui } = getContent(locale);
   const [open, setOpen] = useState(false);
   const expandable = Boolean(src);
 
@@ -51,7 +54,7 @@ export function CaseMedia({ seed, src, alt, category, ratio = "4/3", label, fit,
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={alt ? `Ampliar: ${alt}` : "Ampliar imagem"}
+        aria-label={alt ? `${ui.caseStudy.expand}: ${alt}` : ui.caseStudy.expand}
         className="group block w-full cursor-zoom-in"
       >
         {inner}
@@ -71,7 +74,7 @@ export function CaseMedia({ seed, src, alt, category, ratio = "4/3", label, fit,
           >
             <button
               type="button"
-              aria-label="Fechar"
+              aria-label={ui.caseStudy.close}
               className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
             >
               <X className="size-5" />

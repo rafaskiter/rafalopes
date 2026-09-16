@@ -1,9 +1,12 @@
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { aboutIntro } from "@/content/about";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 
-export function AboutIntro() {
+export function AboutIntro({ locale }: { locale: Locale }) {
+  const { aboutIntro } = getContent(locale);
+
   return (
     <Section dark id="intro">
       <SectionHeading

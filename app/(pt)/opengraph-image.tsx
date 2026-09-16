@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
-import { settings, seo } from "@/content/settings";
+import { getContent } from "@/content/dictionary";
+import { seo } from "@/content/settings";
 import { LogoOutline } from "@/components/icons/logo-outline";
+
+const { settings, ui } = getContent("pt");
 
 export const alt = seo.title;
 export const size = { width: 1200, height: 630 };
@@ -38,7 +41,7 @@ export default function OpengraphImage() {
             {settings.fullName}
           </div>
         </div>
-        <div style={{ fontSize: 140, lineHeight: 1, fontWeight: 700 }}>Olá :)</div>
+        <div style={{ fontSize: 140, lineHeight: 1, fontWeight: 700 }}>{ui.hero.greeting}</div>
         <div style={{ fontSize: 32, color: "#c9b5d2" }}>
           {settings.roles.join("  ·  ")}
         </div>

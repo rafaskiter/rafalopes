@@ -1,4 +1,4 @@
-import type { CaseBlock as CaseBlockType, Category } from "@/types";
+import type { CaseBlock as CaseBlockType, Category, Locale } from "@/types";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 import { CaseMedia } from "@/components/case/case-media";
@@ -39,9 +39,11 @@ function Body({ body }: { body?: string[] }) {
 export function CaseBlock({
   block,
   category,
+  locale,
 }: {
   block: CaseBlockType;
   category: Category;
+  locale: Locale;
 }) {
   const media = block.media ?? [];
 
@@ -71,6 +73,7 @@ export function CaseBlock({
             {media[0] && (
               <Reveal delay={0.1}>
                 <CaseMedia
+                  locale={locale}
                   seed={media[0].seed}
                   src={media[0].src}
                   alt={media[0].alt}
@@ -99,6 +102,7 @@ export function CaseBlock({
           {media[0] && (
             <Reveal>
               <CaseMedia
+                  locale={locale}
                 seed={media[0].seed}
                 src={media[0].src}
                 alt={media[0].alt}
@@ -137,6 +141,7 @@ export function CaseBlock({
             {media.map((m, i) => (
               <Reveal key={m.seed} delay={0.04 * i}>
                 <CaseMedia
+                  locale={locale}
                   seed={m.seed}
                   src={m.src}
                   alt={m.alt}

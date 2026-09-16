@@ -4,6 +4,9 @@
  * o que facilita migrar para um CMS no futuro.
  */
 
+/** Idiomas do site. O português fica na raiz; o inglês, sob /en. */
+export type Locale = "pt" | "en";
+
 /** Categorias usadas nos thumbnails flutuantes do hero e nos cards. */
 export type Category =
   | "Branding"

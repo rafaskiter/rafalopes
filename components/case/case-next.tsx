@@ -3,17 +3,20 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import type { Project } from "@/types";
+import type { Locale, Project } from "@/types";
+import { getContent, projectPath } from "@/content/dictionary";
 import { Media } from "@/components/placeholder/media";
 
-export function CaseNext({ project }: { project: Project }) {
+export function CaseNext({ project, locale }: { project: Project; locale: Locale }) {
+  const { ui } = getContent(locale);
+
   return (
     <section className="border-t border-line">
-      <Link href={`/projetos/${project.slug}`} className="group block">
+      <Link href={projectPath(locale, project.slug)} className="group block">
         <div className="mx-auto grid max-w-7xl items-center gap-8 px-6 py-20 sm:px-8 lg:grid-cols-[1fr_auto] lg:px-12">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-muted">
-              Próximo projeto
+              {ui.caseStudy.next}
             </p>
             <h2 className="mt-4 flex items-center gap-4 font-display text-4xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 sm:text-6xl">
               {project.title}

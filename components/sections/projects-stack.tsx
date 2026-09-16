@@ -2,12 +2,18 @@
 
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
-import type { Project } from "@/types";
+import type { Locale, Project } from "@/types";
 import { StackCard } from "./project-card";
 import { SoonCard } from "./soon-card";
 
 /** Container do deck empilhável: mede o scroll e distribui a progressão aos cards. */
-export function ProjectsStack({ projects }: { projects: Project[] }) {
+export function ProjectsStack({
+  projects,
+  locale,
+}: {
+  projects: Project[];
+  locale: Locale;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -26,9 +32,11 @@ export function ProjectsStack({ projects }: { projects: Project[] }) {
           total={projects.length}
           stackSize={stackSize}
           progress={scrollYProgress}
+          locale={locale}
         />
       ))}
       <SoonCard
+        locale={locale}
         index={projects.length}
         stackSize={stackSize}
         progress={scrollYProgress}

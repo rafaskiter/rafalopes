@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { nav, settings } from "@/content/settings";
+import type { Locale } from "@/types";
+import { getContent, homePath } from "@/content/dictionary";
+import { LocaleSwitch } from "@/components/layout/locale-switch";
 import { LogoColor } from "@/components/icons/logo-color";
 import { LogoOutline } from "@/components/icons/logo-outline";
 import { cn } from "@/lib/utils";
 
-export function Header() {
+export function Header({ locale }: { locale: Locale }) {
+  const { nav, settings, ui } = getContent(locale);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
   // Só a home abre com hero escuro; as demais rotas começam no fundo claro.
-  const onDarkHero = pathname === "/" && !scrolled && !open;
+  const onDarkHero = pathname === homePath(locale) && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -43,10 +46,10 @@ export function Header() {
       >
       <div className="mx-auto flex h-[var(--header-h,4.5rem)] max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
-          href="/"
+          href={homePath(locale)}
           className="relative z-50 flex items-center"
           onClick={() => setOpen(false)}
-          aria-label={`${settings.fullName} — início`}
+          aria-label={`${settings.fullName} — ${ui.header.home}`}
         >
           {/* O wrapper sobrevive à troca das duas artes, então é ele que anima
               o tamanho — uma transição no filho seria cortada pelo remount. */}
@@ -65,7 +68,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-9 md:flex" aria-label={ui.header.mainNav}>
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -86,15 +89,16 @@ export function Header() {
               />
             </Link>
           ))}
+          <LocaleSwitch current={locale} onDark={onDarkHero} />
         </nav>
 
         <button
           className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
+          aria-label={open ? ui.header.closeMenu : ui.header.openMenu}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">Menu</span>
+          <span className="sr-only">{ui.header.menu}</span>
           <div className={cn("flex w-6 flex-col gap-[5px]", onDarkHero ? "text-on-dark" : "text-ink")}>
             <span className={cn("h-px bg-current transition-transform duration-300", open && "translate-y-[6px] rotate-45")} />
             <span className={cn("h-px bg-current transition-opacity duration-300", open && "opacity-0")} />
@@ -113,7 +117,7 @@ export function Header() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-bg md:hidden"
           >
-            <nav className="flex h-full flex-col justify-center gap-2 px-8" aria-label="Navegação mobile">
+            <nav className="flex h-full flex-col justify-center gap-2 px-8" aria-label={ui.header.mobileNav}>
               {nav.map((item, i) => (
                 <motion.div
                   key={item.href}
@@ -130,6 +134,14 @@ export function Header() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + nav.length * 0.08 }}
+                className="mt-8"
+              >
+                <LocaleSwitch current={locale} className="text-lg" />
+              </motion.div>
             </nav>
           </motion.div>
         )}

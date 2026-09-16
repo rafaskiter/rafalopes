@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { nav, settings, socials } from "@/content/settings";
-import { contact } from "@/content/contact";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
+import { settings } from "@/content/settings";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 
-export function Footer() {
+export function Footer({ locale }: { locale: Locale }) {
+  const { nav, socials, contact, settings: s, ui } = getContent(locale);
   const whatsappHref = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(
     contact.whatsappMessage,
   )}`;
@@ -47,8 +49,8 @@ export function Footer() {
               </div>
             </div>
 
-            <nav aria-label="Navegação do rodapé">
-              <p className="mb-4 text-xs uppercase tracking-widest text-muted">Navegação</p>
+            <nav aria-label={ui.footer.navAria}>
+              <p className="mb-4 text-xs uppercase tracking-widest text-muted">{ui.footer.nav}</p>
               <ul className="space-y-2">
                 {nav.map((item) => (
                   <li key={item.href}>
@@ -61,7 +63,7 @@ export function Footer() {
             </nav>
 
             <nav aria-label="Redes sociais">
-              <p className="mb-4 text-xs uppercase tracking-widest text-muted">Social</p>
+              <p className="mb-4 text-xs uppercase tracking-widest text-muted">{ui.footer.social}</p>
               <ul className="space-y-2">
                 {socials.map((s) => (
                   <li key={s.href}>
@@ -81,9 +83,9 @@ export function Footer() {
 
           <div className="mt-16 flex flex-col items-start justify-between gap-2 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:items-center">
             <p>
-              © {new Date().getFullYear()} {settings.fullName}. {settings.location}.
+              © {new Date().getFullYear()} {settings.fullName}. {s.location}.
             </p>
-            <p>Feito por mim :)</p>
+            <p>{ui.footer.madeBy}</p>
           </div>
         </div>
       </div>

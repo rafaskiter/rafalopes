@@ -9,7 +9,8 @@ import {
   useReducedMotion,
   type MotionValue,
 } from "framer-motion";
-import { galleryItems } from "@/content/projects";
+import type { GalleryItem, Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 import { Media } from "@/components/placeholder/media";
 
 /**
@@ -33,7 +34,8 @@ const layout = [
 /** Amplitude (px) do deslocamento por unidade de profundidade. */
 const AMP = 90;
 
-export function FloatingGallery() {
+export function FloatingGallery({ locale }: { locale: Locale }) {
+  const { galleryItems } = getContent(locale);
   const reduce = useReducedMotion();
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -95,7 +97,7 @@ function FloatingItem({
   seed: string;
   src?: string;
   title: string;
-  category: (typeof galleryItems)[number]["category"];
+  category: GalleryItem["category"];
   index: number;
   reduce: boolean;
 }) {

@@ -1,18 +1,21 @@
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
-import { collabs } from "@/content/about";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 
 /**
  * Faixa de marcas em carrossel infinito. Fundo branco porque os logos vêm
  * com fundo branco chapado — sobre o creme do site apareceria um retângulo.
  */
-export function Collabs() {
+export function Collabs({ locale }: { locale: Locale }) {
+  const { collabs, ui } = getContent(locale);
+
   return (
     <section className="border-t border-line bg-bg-elevated py-12 sm:py-16">
       <Container>
         <Reveal>
           <p className="text-xs uppercase tracking-[0.2em] text-faint">
-            Em colaboração com
+            {ui.collabs.eyebrow}
           </p>
         </Reveal>
       </Container>

@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import { Urbanist, Corben } from "next/font/google";
-import "./globals.css";
-import { settings, seo } from "@/content/settings";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 import { SmoothScroll } from "@/components/layout/smooth-scroll";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -19,38 +18,26 @@ const corben = Corben({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(settings.url),
-  title: {
-    default: seo.title,
-    template: `%s · ${settings.fullName}`,
-  },
-  description: seo.description,
-  keywords: [...seo.keywords],
-  authors: [{ name: settings.fullName }],
-  creator: settings.fullName,
-  openGraph: {
-    type: "website",
-    locale: "pt_BR",
-    url: settings.url,
-    siteName: settings.fullName,
-    title: seo.title,
-    description: seo.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: seo.title,
-    description: seo.description,
-  },
-  alternates: { canonical: "/" },
-};
+/** Código de idioma para o atributo lang do documento. */
+const htmlLang: Record<Locale, string> = { pt: "pt-BR", en: "en" };
 
-export default function RootLayout({
+/**
+ * Casca comum aos dois idiomas. Cada layout raiz a usa com o seu locale,
+ * o que é o que permite servir o lang correto no <html> — um layout único
+ * não teria como saber em qual idioma está.
+ */
+export function SiteShell({
+  locale,
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+}: {
+  locale: Locale;
+  children: React.ReactNode;
+}) {
+  const { ui } = getContent(locale);
+
   return (
     <html
-      lang="pt-BR"
+      lang={htmlLang[locale]}
       className={`${urbanist.variable} ${corben.variable}`}
       suppressHydrationWarning
     >
@@ -59,12 +46,12 @@ export default function RootLayout({
           href="#conteudo"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-on-dark"
         >
-          Pular para o conteúdo
+          {ui.skipToContent}
         </a>
         <SmoothScroll>
-          <Header />
+          <Header locale={locale} />
           <main id="conteudo">{children}</main>
-          <Footer />
+          <Footer locale={locale} />
         </SmoothScroll>
       </body>
     </html>

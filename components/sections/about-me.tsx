@@ -6,12 +6,23 @@ import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
-import { aboutMe, timeline, skills, tools, education, certifications } from "@/content/about";
-import { contact } from "@/content/contact";
-import { settings, socials } from "@/content/settings";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
+import { settings } from "@/content/settings";
 import { cn } from "@/lib/utils";
 
-export function AboutMe() {
+export function AboutMe({ locale }: { locale: Locale }) {
+  const {
+    aboutMe,
+    timeline,
+    skills,
+    tools,
+    education,
+    certifications,
+    contact,
+    socials,
+    ui,
+  } = getContent(locale);
   const linkedin = socials.find((s) => s.label === "LinkedIn")?.href ?? "#";
   const whatsappHref = `https://wa.me/${settings.whatsapp}?text=${encodeURIComponent(
     contact.whatsappMessage,
@@ -75,7 +86,7 @@ export function AboutMe() {
           {/* Timeline */}
           <Reveal>
             <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
-              Trajetória
+              {ui.about.timeline}
             </h3>
           </Reveal>
           <ul className="space-y-px">
@@ -97,7 +108,7 @@ export function AboutMe() {
           {/* Formação */}
           <Reveal>
             <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
-              Formação
+              {ui.about.education}
             </h3>
           </Reveal>
           <ul className="space-y-px">
@@ -117,7 +128,7 @@ export function AboutMe() {
           {/* Certificados */}
           <Reveal>
             <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
-              Certificados
+              {ui.about.certifications}
             </h3>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -136,7 +147,7 @@ export function AboutMe() {
           {/* Skills */}
           <Reveal>
             <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
-              Skills
+              {ui.about.skills}
             </h3>
           </Reveal>
           <div className="grid gap-8 sm:grid-cols-3">
@@ -155,7 +166,7 @@ export function AboutMe() {
           {/* Ferramentas */}
           <Reveal>
             <h3 className="mb-6 mt-14 text-sm uppercase tracking-[0.2em] text-ink">
-              Ferramentas
+              {ui.about.tools}
             </h3>
           </Reveal>
           <Reveal>

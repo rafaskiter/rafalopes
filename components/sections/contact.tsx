@@ -5,22 +5,25 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Button } from "@/components/ui/button";
-import { contactSchema } from "@/lib/validations";
-import { contact } from "@/content/contact";
+import { makeContactSchema } from "@/lib/validations";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 
 type Errors = Partial<Record<"name" | "email" | "message", string>>;
 
-export function Contact() {
+export function Contact({ locale }: { locale: Locale }) {
+  const { contact, ui } = getContent(locale);
   const [errors, setErrors] = useState<Errors>({});
   const [success, setSuccess] = useState(false);
   const [sending, setSending] = useState(false);
   const [apiError, setApiError] = useState("");
+  const schema = makeContactSchema(ui.form);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const parsed = contactSchema.safeParse({
+    const parsed = schema.safeParse({
       name: data.get("name"),
       email: data.get("email"),
       message: data.get("message"),
@@ -48,14 +51,14 @@ export function Contact() {
 
       if (!res.ok) {
         const json = await res.json().catch(() => ({}));
-        throw new Error(json.error || "Erro ao enviar mensagem.");
+        throw new Error(json.error || ui.form.sendError);
       }
 
       setSuccess(true);
       form.reset();
     } catch (err) {
       setApiError(
-        err instanceof Error ? err.message : "Erro ao enviar. Tente novamente.",
+        err instanceof Error ? err.message : ui.form.retryError,
       );
     } finally {
       setSending(false);
@@ -107,7 +110,7 @@ export function Contact() {
               disabled={sending}
               className="bg-acid-deep hover:bg-acid-deep-hover"
             >
-              {sending ? "Enviando…" : contact.form.submit}
+              {sending ? ui.form.sending : contact.form.submit}
             </Button>
             {success && (
               <p className="text-sm text-muted" role="status">

@@ -1,0 +1,52 @@
+import { ImageResponse } from "next/og";
+import { getContent } from "@/content/dictionary";
+import { seo } from "@/content/en/settings";
+import { LogoOutline } from "@/components/icons/logo-outline";
+
+const { settings, ui } = getContent("en");
+
+export const alt = seo.title;
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+export default function OpengraphImage() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: 80,
+          background: "#100325",
+          color: "#f4f7ea",
+          fontFamily: "ui-sans-serif, system-ui, sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+          {/* Outline em branco: o fundo do card é escuro, a versão colorida
+              da marca é azul-escuro e sumiria nele. */}
+          <LogoOutline width={72} height={67} stroke="#f4f7ea" />
+          <div
+            style={{
+              fontSize: 28,
+              letterSpacing: 4,
+              textTransform: "uppercase",
+              color: "#ff5c8a",
+              fontWeight: 700,
+            }}
+          >
+            {settings.fullName}
+          </div>
+        </div>
+        <div style={{ fontSize: 140, lineHeight: 1, fontWeight: 700 }}>{ui.hero.greeting}</div>
+        <div style={{ fontSize: 32, color: "#c9b5d2" }}>
+          {settings.roles.join("  ·  ")}
+        </div>
+      </div>
+    ),
+    size,
+  );
+}

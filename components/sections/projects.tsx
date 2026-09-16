@@ -1,9 +1,12 @@
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ProjectsStack } from "./projects-stack";
-import { projects } from "@/content/projects";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 
-export function Projects() {
+export function Projects({ locale }: { locale: Locale }) {
+  const { projects, ui } = getContent(locale);
+
   return (
     <section id="projetos" className="relative bg-bg-elevated">
       {/* Textura de marca repetida no fundo da seção */}
@@ -14,13 +17,13 @@ export function Projects() {
       />
       <Container className="relative pt-[var(--section-y)]">
         <SectionHeading
-          eyebrow="Projetos"
-          title="Projetos que ajudei a construir com um propósito bem definido."
+          eyebrow={ui.projects.eyebrow}
+          title={ui.projects.heading}
           className="max-w-4xl"
         />
       </Container>
 
-      <ProjectsStack projects={projects} />
+      <ProjectsStack projects={projects} locale={locale} />
     </section>
   );
 }

@@ -4,15 +4,19 @@ import Link from "next/link";
 import { motion, useTransform, type MotionValue } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import type { Locale } from "@/types";
+import { getContent, homePath } from "@/content/dictionary";
 
 interface SoonCardProps {
+  locale: Locale;
   index: number;
   stackSize: number;
   progress: MotionValue<number>;
 }
 
 /** Card que fecha o deck: avisa que o portfólio ainda receberá novos projetos. */
-export function SoonCard({ index, stackSize, progress }: SoonCardProps) {
+export function SoonCard({ locale, index, stackSize, progress }: SoonCardProps) {
+  const { ui } = getContent(locale);
   const targetScale = 1 - (stackSize - index) * 0.04;
   const scale = useTransform(progress, [index / stackSize, 1], [1, targetScale]);
 
@@ -25,21 +29,19 @@ export function SoonCard({ index, stackSize, progress }: SoonCardProps) {
         <div className="flex flex-col items-center gap-6 px-6 py-20 text-center sm:px-10 sm:py-28">
           <span className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-accent">
             <span className="size-1.5 rounded-full bg-current" />
-            Em construção
+            {ui.soon.eyebrow}
           </span>
           <h3 className="max-w-3xl text-balance font-display text-[clamp(2rem,6vw,4rem)] leading-[1.05] tracking-tight">
-            Em breve, mais projetos por aqui
+            {ui.soon.heading}
           </h3>
           <p className="max-w-xl text-pretty text-lg text-muted sm:text-xl">
-            Este site ainda está em construção. Estou preparando outros trabalhos
-            para publicar — entre eles projetos de branding, identidade visual e
-            produto digital.
+            {ui.soon.body}
           </p>
           <Link
-            href="/#contato"
+            href={`${homePath(locale)}#contato`}
             className={buttonVariants({ variant: "outline", size: "lg" })}
           >
-            Falar comigo
+            {ui.soon.cta}
           </Link>
         </div>
       </motion.div>

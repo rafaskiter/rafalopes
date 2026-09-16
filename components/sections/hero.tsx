@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { settings } from "@/content/settings";
+import type { Locale } from "@/types";
+import { getContent } from "@/content/dictionary";
 import { FloatingGallery } from "@/components/hero/floating-gallery";
 
-export function Hero() {
+export function Hero({ locale }: { locale: Locale }) {
+  const { settings, ui } = getContent(locale);
+
   return (
     <section
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 text-on-dark sm:px-6"
@@ -13,7 +16,7 @@ export function Hero() {
           "radial-gradient(135% 95% at 50% 112%, rgba(77,166,255,0.55) 0%, rgba(77,166,255,0.16) 28%, rgba(16,3,37,0) 58%), #100325",
       }}
     >
-      <FloatingGallery />
+      <FloatingGallery locale={locale} />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         <motion.p
@@ -26,7 +29,7 @@ export function Hero() {
         </motion.p>
 
         <h1 className="font-display text-[clamp(4.5rem,25vw,20rem)] leading-[0.9] tracking-tight">
-          {"Olá :)".split("").map((char, i) => (
+          {ui.hero.greeting.split("").map((char, i) => (
             <motion.span
               key={i}
               className="inline-block"
@@ -62,7 +65,7 @@ export function Hero() {
         transition={{ delay: 1.2, duration: 1 }}
         className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-[0.7rem] uppercase tracking-widest text-on-dark/55 sm:text-xs"
       >
-        <span>Role para explorar</span>
+        <span>{ui.hero.scrollHint}</span>
         <motion.span
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}

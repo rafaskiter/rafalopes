@@ -7,7 +7,8 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import type { Project } from "@/types";
+import type { Locale, Project } from "@/types";
+import { getContent, projectPath } from "@/content/dictionary";
 import { Media } from "@/components/placeholder/media";
 import { readableOn } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ interface StackCardProps {
   /** Cards no deck (inclui o card de encerramento) — usado na geometria. */
   stackSize: number;
   progress: MotionValue<number>;
+  locale: Locale;
 }
 
 /**
@@ -26,7 +28,15 @@ interface StackCardProps {
  * fica centralizado na tela e o seguinte desliza por cima enquanto o anterior
  * encolhe. O leve offset por índice cria o "empilhamento" visível no topo.
  */
-export function StackCard({ project, index, total, stackSize, progress }: StackCardProps) {
+export function StackCard({
+  project,
+  index,
+  total,
+  stackSize,
+  progress,
+  locale,
+}: StackCardProps) {
+  const { ui } = getContent(locale);
   const ink = readableOn(project.color);
   const muted = ink === "#0a0a0a" ? "rgba(10,10,10,0.62)" : "rgba(255,255,255,0.72)";
 
@@ -46,9 +56,9 @@ export function StackCard({ project, index, total, stackSize, progress }: StackC
         className="relative w-full max-w-6xl origin-top overflow-hidden rounded-3xl shadow-[0_40px_120px_-50px_rgba(0,0,0,0.6)]"
       >
         <Link
-          href={`/projetos/${project.slug}`}
+          href={projectPath(locale, project.slug)}
           className="group grid h-full gap-5 p-6 sm:gap-8 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14"
-          aria-label={`Ver projeto ${project.title}`}
+          aria-label={`${ui.caseStudy.next}: ${project.title}`}
         >
           {/* Coluna de texto */}
           <div className="flex flex-col justify-between gap-8">

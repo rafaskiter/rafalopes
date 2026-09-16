@@ -1,10 +1,13 @@
-import type { Project } from "@/types";
+import type { Locale, Project } from "@/types";
+import { getContent } from "@/content/dictionary";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 import { TextReveal } from "@/components/motion/text-reveal";
 import { CaseMedia } from "@/components/case/case-media";
 
-export function CaseHero({ project }: { project: Project }) {
+export function CaseHero({ project, locale }: { project: Project; locale: Locale }) {
+  const { ui } = getContent(locale);
+
   return (
     <header className="pt-[calc(var(--header-h,4.5rem)+clamp(3rem,8vh,6rem))]">
       <Container>
@@ -22,15 +25,16 @@ export function CaseHero({ project }: { project: Project }) {
 
         {/* Metadados */}
         <div className="mt-12 grid gap-8 border-t border-line pt-8 sm:grid-cols-3">
-          <Meta label="Cliente" values={[project.client]} />
-          <Meta label="Atuação" values={project.role} />
-          <Meta label="Serviços" values={project.services} />
+          <Meta label={ui.caseStudy.client} values={[project.client]} />
+          <Meta label={ui.caseStudy.role} values={project.role} />
+          <Meta label={ui.caseStudy.services} values={project.services} />
         </div>
       </Container>
 
       <Container className="mt-14">
         <Reveal>
           <CaseMedia
+                  locale={locale}
             seed={project.cover.seed}
             src={project.cover.src}
             alt={project.cover.alt}

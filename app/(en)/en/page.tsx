@@ -5,15 +5,15 @@ import { Collabs } from "@/components/sections/collabs";
 import { AboutMe } from "@/components/sections/about-me";
 import { Contact } from "@/components/sections/contact";
 
-export default function HomePage() {
+export default function EnHomePage() {
   return (
     <>
-      <Hero />
-      <AboutIntro />
-      <Projects />
-      <Collabs />
-      <AboutMe />
-      <Contact />
+      <Hero locale="en" />
+      <AboutIntro locale="en" />
+      <Projects locale="en" />
+      <Collabs locale="en" />
+      <AboutMe locale="en" />
+      <Contact locale="en" />
     </>
   );
 }
