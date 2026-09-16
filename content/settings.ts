@@ -11,8 +11,8 @@ export const settings = {
   shortBio:
     "Designer de produto que cuida das experiências digitais com propósito, da estratégia à interface.",
   email: "skiter.rafael@gmail.com",
-  /** Apenas dígitos, formato internacional. Configurar quando definido. */
-  whatsapp: "5500000000000",
+  /** Apenas dígitos, formato internacional. */
+  whatsapp: "5511964675546",
   location: "Brasil · Remoto",
   /** URL pública — usada em metadados, canonical e sitemap. */
   url: process.env.NEXT_PUBLIC_APP_URL ?? "https://rafalopes.vercel.app",
@@ -29,8 +29,6 @@ export const nav: NavItem[] = [
 export const socials: SocialLink[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/rafaskiter" },
   { label: "Instagram", href: "https://www.instagram.com/" },
-  { label: "Behance", href: "https://www.behance.net/" },
-  { label: "Dribbble", href: "https://dribbble.com/" },
 ];
 
 export const seo = {

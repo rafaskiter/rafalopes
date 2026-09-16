@@ -1,12 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownToLine, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { SeededPlaceholder } from "@/components/placeholder/seeded-placeholder";
 import { buttonVariants } from "@/components/ui/button";
 import { aboutMe, timeline, skills, tools, education, certifications } from "@/content/about";
-import { settings, socials } from "@/content/settings";
+import { socials } from "@/content/settings";
 
 export function AboutMe() {
   const linkedin = socials.find((s) => s.label === "LinkedIn")?.href ?? "#";
@@ -17,21 +17,19 @@ export function AboutMe() {
         {/* Foto + ações */}
         <div className="lg:sticky lg:top-28 lg:self-start">
           <Reveal>
-            <div className="overflow-hidden rounded-xl">
-              <SeededPlaceholder
-                seed={aboutMe.photo.seed}
-                category="Identidade Visual"
-                ratio="3/4"
-                label={aboutMe.photo.label}
-                rounded={false}
+            <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
+              <Image
+                src="/brand/Rafael-Lopes.jpeg"
+                alt={aboutMe.photo.label}
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={settings.cvUrl} className={buttonVariants({ variant: "solid" })}>
-                <ArrowDownToLine /> Baixar CV
-              </Link>
               <Link
                 href={linkedin}
                 target="_blank"

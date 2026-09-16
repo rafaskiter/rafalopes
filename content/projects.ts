@@ -636,509 +636,161 @@ export const projects: Project[] = [
     ],
   },
 
-  // 2 — Branding -------------------------------------------------------------
+  // 4 — Assis International Holding [Website institucional] -------------------
   {
-    slug: "raiz-cafe",
-    title: "Raíz Café",
-    client: "Raíz Café Especial",
-    category: "Branding",
-    type: "branding",
-    year: 2023,
-    featured: true,
-    summary:
-      "Identidade visual de uma torrefação de café especial com origem rastreável e alma artesanal.",
-    intro:
-      "Uma marca que celebra a origem. Do grão ao gole, cada detalhe conta a história de quem planta.",
-    role: ["Direção de Arte", "Branding", "Naming"],
-    services: ["Naming", "Identidade Visual", "Aplicações", "Packaging"],
-    cover: { seed: "raiz-cover", ratio: "16/9", category: "Branding" },
-    color: "#c8501e",
-    blocks: [
-      {
-        id: "contexto",
-        layout: "split",
-        eyebrow: "Contexto",
-        heading: "Do produtor para a xícara",
-        body: [
-          "A Raíz nasceu do desejo de aproximar quem produz de quem consome café especial. Faltava uma marca à altura da qualidade do grão.",
-          "O briefing pedia algo artesanal, mas contemporâneo, longe do clichê rústico do setor.",
-        ],
-        media: [{ seed: "raiz-context", ratio: "4/3" }],
-      },
-      {
-        id: "objetivo",
-        layout: "list",
-        eyebrow: "Objetivo",
-        heading: "O que a marca precisava entregar",
-        list: [
-          { title: "Origem", description: "Tornar a rastreabilidade um símbolo de orgulho." },
-          { title: "Distinção", description: "Destacar-se nas prateleiras de cafés especiais." },
-          { title: "Escala", description: "Sistema flexível para edições por safra e produtor." },
-        ],
-      },
-      {
-        id: "naming",
-        layout: "text",
-        eyebrow: "Naming",
-        heading: "Raíz: o que sustenta tudo",
-        body: [
-          "Entre dezenas de rotas, \"Raíz\" venceu por carregar dupla leitura: a raiz da planta e a origem da história. Curto, memorável e fácil de pronunciar internacionalmente.",
-        ],
-      },
-      {
-        id: "conceito",
-        layout: "split",
-        eyebrow: "Conceito",
-        heading: "Crescer a partir da origem",
-        body: [
-          "O conceito \"da raiz ao gole\" organiza toda a expressão da marca: formas que brotam, gestos manuais e uma paleta terrosa e viva.",
-        ],
-        media: [{ seed: "raiz-concept", ratio: "4/3" }],
-      },
-      {
-        id: "moodboard",
-        layout: "media-grid",
-        eyebrow: "Moodboard",
-        heading: "Territórios visuais",
-        media: [
-          { seed: "raiz-mood-1", ratio: "1/1" },
-          { seed: "raiz-mood-2", ratio: "1/1" },
-          { seed: "raiz-mood-3", ratio: "1/1" },
-          { seed: "raiz-mood-4", ratio: "1/1" },
-        ],
-      },
-      {
-        id: "tipografia",
-        layout: "wide-media",
-        eyebrow: "Tipografia",
-        heading: "Serifa com personalidade",
-        body: [
-          "Uma serifa de alto contraste para o logotipo, equilibrada por uma grotesca neutra nos textos. Tradição encontra modernidade.",
-        ],
-        media: [{ seed: "raiz-type", ratio: "21/9" }],
-      },
-      {
-        id: "paleta",
-        layout: "media-grid",
-        eyebrow: "Paleta & Grid",
-        heading: "Cores da terra, ritmo do grid",
-        body: [
-          "Tons de terra, verde-folha e um vermelho-cereja vibrante como acento. O grid modular garante consistência das embalagens ao digital.",
-        ],
-        media: [
-          { seed: "raiz-color-1", ratio: "1/1" },
-          { seed: "raiz-color-2", ratio: "1/1" },
-          { seed: "raiz-grid", ratio: "1/1" },
-        ],
-      },
-      {
-        id: "marca",
-        layout: "wide-media",
-        eyebrow: "Construção da marca · Área de proteção",
-        heading: "O símbolo e suas regras",
-        body: [
-          "Um símbolo que combina uma raiz e um grão, com área de proteção, versões monocromáticas e usos mínimos definidos para cada contexto.",
-        ],
-        media: [{ seed: "raiz-logo", ratio: "16/9" }],
-      },
-      {
-        id: "aplicacoes",
-        layout: "media-grid",
-        eyebrow: "Aplicações & Mockups",
-        heading: "A marca no mundo real",
-        body: [
-          "Packaging, canecas, banners, cartões, camisetas, outdoor e redes sociais. Um sistema coeso em todos os pontos de contato.",
-        ],
-        media: [
-          { seed: "raiz-pack", ratio: "4/3", label: "Packaging" },
-          { seed: "raiz-mug", ratio: "4/3", label: "Canecas" },
-          { seed: "raiz-card", ratio: "4/3", label: "Cartões" },
-          { seed: "raiz-shirt", ratio: "4/3", label: "Camisetas" },
-          { seed: "raiz-outdoor", ratio: "4/3", label: "Outdoor" },
-          { seed: "raiz-social", ratio: "4/3", label: "Redes Sociais" },
-        ],
-      },
-      {
-        id: "resultados",
-        layout: "metrics",
-        metrics: [
-          { value: "+72%", label: "Reconhecimento de marca" },
-          { value: "3×", label: "Vendas no e-commerce" },
-          { value: "12", label: "Edições por safra lançadas" },
-        ],
-      },
-    ],
-  },
-
-  // 3 — Website --------------------------------------------------------------
-  {
-    slug: "atlas-studio",
-    title: "Atlas Studio",
-    client: "Atlas Arquitetura",
+    slug: "assis-holding",
+    title: "Assis Holding",
+    client: "Assis International Holding",
     category: "Websites",
     type: "website",
-    year: 2024,
+    year: 2016,
     featured: true,
     summary:
-      "Site institucional imersivo para um escritório de arquitetura, com narrativa de portfólio fluida.",
+      "Site institucional de uma holding com negócios em vários setores: história, estratégia, governança e equipe em uma navegação só.",
     intro:
-      "Arquitetura é espaço e tempo. O site precisava ser uma caminhada, não um catálogo.",
-    role: ["Designer", "Creative Developer"],
-    services: ["UX/UI", "Front-end", "Motion", "Performance"],
-    cover: { seed: "atlas-cover", ratio: "16/9", category: "Websites" },
-    color: "#b07b3a",
+      "Uma holding com muitas frentes tem muito o que contar. O desafio era dizer tudo sem cansar quem chega.",
+    role: ["UX/UI Designer", "Visual Design", "Desenvolvimento"],
+    services: ["Arquitetura de Informação", "UX/UI Design", "Visual Design", "Front-end"],
+    cover: {
+      seed: "assis-cover",
+      src: "/cases/assis/cover.png",
+      alt: "Home da Assis International Holding em um notebook, com a chamada “Nós olhamos para além do aqui e agora”",
+      ratio: "16/9",
+      fit: "cover",
+      category: "Websites",
+    },
+    card: {
+      seed: "assis-card",
+      src: "/cases/assis/cover.png",
+      alt: "Site institucional da Assis International Holding em um notebook",
+      fit: "cover",
+      category: "Websites",
+    },
+    color: "#001e62",
     blocks: [
       {
-        id: "problema",
-        layout: "split",
-        eyebrow: "Problema",
-        heading: "Um portfólio que não respirava",
+        id: "resumo",
+        layout: "text",
+        eyebrow: "Resumo",
+        heading: "A holding inteira em um site",
         body: [
-          "O site antigo era uma grade densa de fotos. Bonito, mas frio, não transmitia o cuidado espacial que define o estúdio.",
-          "Precisávamos de ritmo, escala e silêncio: a sensação de percorrer um edifício.",
+          "A Assis International Holding investe, aconselha e presta serviço para as empresas do próprio grupo, em setores bem diferentes entre si. O site precisava traduzir essa dimensão de forma clara, sofisticada e objetiva.",
+          "Atuei do conteúdo à entrega: organizei a informação, desenhei a interface e implementei o site responsivo.",
         ],
-        media: [{ seed: "atlas-problem", ratio: "4/3" }],
+      },
+      {
+        id: "contexto",
+        layout: "text",
+        eyebrow: "Contexto",
+        heading: "Muita informação para caber sem cansar",
+        body: [
+          "História, estratégia, valores, áreas de atuação, equipe, governança, notícias e contato. Tudo precisava estar no site sem transformar a visita em uma leitura longa demais.",
+          "Por isso o ponto de partida não foi o layout, foi o conteúdo: entender o que existia, o que era essencial e como cada informação se relacionava com as outras dentro da experiência.",
+        ],
+      },
+      {
+        id: "numeros",
+        layout: "metrics",
+        metrics: [
+          { value: "7", label: "Áreas de conteúdo na navegação" },
+          { value: "10", label: "Páginas institucionais além da home" },
+          { value: "3", label: "Idiomas: português, inglês e espanhol" },
+        ],
       },
       {
         id: "arquitetura",
-        layout: "wide-media",
-        eyebrow: "Arquitetura de Informação",
-        heading: "Menos páginas, mais narrativa",
-        body: [
-          "Reduzimos a estrutura a quatro destinos essenciais e transformamos cada projeto em uma história rolável, com transições contínuas.",
-        ],
-        media: [{ seed: "atlas-ia", ratio: "21/9" }],
-      },
-      {
-        id: "wireframes",
-        layout: "media-grid",
-        eyebrow: "Wireframes",
-        heading: "O esqueleto da experiência",
-        media: [
-          { seed: "atlas-wire-1", ratio: "3/4" },
-          { seed: "atlas-wire-2", ratio: "3/4" },
-          { seed: "atlas-wire-3", ratio: "3/4" },
-        ],
-      },
-      {
-        id: "ui",
-        layout: "wide-media",
-        eyebrow: "UI",
-        heading: "Tipografia monumental, imagens que respiram",
-        body: [
-          "Grande escala tipográfica, generoso espaço em branco e fotografia em tela cheia. A interface some para o conteúdo aparecer.",
-        ],
-        media: [{ seed: "atlas-ui", ratio: "16/9" }],
-      },
-      {
-        id: "componentes",
-        layout: "media-grid",
-        eyebrow: "Componentes",
-        heading: "Sistema enxuto e reutilizável",
-        body: [
-          "Um conjunto pequeno de componentes (hero, galeria, citação, índice) combinados de formas diferentes para cada projeto.",
-        ],
-        media: [
-          { seed: "atlas-comp-1", ratio: "1/1" },
-          { seed: "atlas-comp-2", ratio: "1/1" },
-          { seed: "atlas-comp-3", ratio: "1/1" },
+        layout: "list",
+        eyebrow: "Arquitetura da informação",
+        heading: "Sete caminhos, sem labirinto",
+        list: [
+          {
+            title: "Sobre",
+            description:
+              "Quem somos, estratégia e filosofia, cultura e valores e a mensagem do fundador.",
+          },
+          { title: "Área de Atuação", description: "Os setores em que o grupo investe e opera." },
+          { title: "Equipe", description: "As pessoas por trás das decisões do grupo." },
+          {
+            title: "Governança Corporativa",
+            description: "Como a holding se estrutura e presta contas.",
+          },
+          { title: "News", description: "Notícias e movimentos do grupo." },
+          { title: "Carreira", description: "Porta de entrada para quem quer trabalhar no grupo." },
+          { title: "Contato", description: "Canais diretos e o endereço da sede, em São Paulo." },
         ],
       },
       {
-        id: "responsividade",
-        layout: "split",
-        eyebrow: "Responsividade",
-        heading: "Da ultrawide ao bolso",
-        body: [
-          "Cada layout foi pensado em cinco breakpoints. A experiência de scroll suave se adapta sem perder fluidez no mobile.",
-        ],
-        media: [{ seed: "atlas-responsive", ratio: "4/3" }],
-      },
-      {
-        id: "resultados",
-        layout: "metrics",
-        metrics: [
-          { value: "99", label: "Performance no Lighthouse" },
-          { value: "+3min", label: "Tempo médio na página" },
-          { value: "+48%", label: "Contatos qualificados" },
-        ],
-      },
-    ],
-  },
-
-  // 4 — Game -----------------------------------------------------------------
-  {
-    slug: "lumen",
-    title: "Lumen",
-    client: "Estúdio Aurora (conceito)",
-    category: "Games",
-    type: "game",
-    year: 2023,
-    summary:
-      "Direção de interface e arte conceitual para um jogo de puzzle atmosférico sobre luz e memória.",
-    intro:
-      "Em Lumen, você guia uma centelha por um mundo apagado. A interface precisava desaparecer para a emoção brilhar.",
-    role: ["Game UI/UX", "Concept", "Direção Visual"],
-    services: ["Game Design", "HUD & Menus", "Concept Art", "Protótipos"],
-    cover: { seed: "lumen-cover", ratio: "16/9", category: "Games" },
-    color: "#6b3fb0",
-    blocks: [
-      {
-        id: "gameplay",
-        layout: "split",
-        eyebrow: "Gameplay",
-        heading: "Luz como mecânica",
-        body: [
-          "O jogador manipula feixes de luz para revelar caminhos e memórias. A clareza visual da mecânica era inegociável.",
-          "Cada puzzle ensina sem tutorial, pela própria linguagem visual.",
-        ],
-        media: [{ seed: "lumen-gameplay", ratio: "4/3" }],
-      },
-      {
-        id: "narrativa",
+        id: "home",
         layout: "text",
-        eyebrow: "Narrativa",
-        heading: "Uma história contada sem palavras",
+        eyebrow: "Home",
+        heading: "A home como síntese",
         body: [
-          "Lumen evita texto. A narrativa emerge de ambientes, cor e som, e o design de interface precisava respeitar esse silêncio.",
+          "A home apresenta o posicionamento do grupo, destaca o que é relevante e conduz o visitante para as informações mais específicas. Quem chega entende o que é a holding antes de decidir para onde ir.",
+          "A chamada de abertura — “Nós olhamos para além do aqui e agora” — dá o tom em uma frase e uma imagem: uma empresa que pensa em longo prazo.",
         ],
       },
       {
-        id: "hud",
-        layout: "wide-media",
-        eyebrow: "HUD",
-        heading: "Interface diegética e mínima",
-        body: [
-          "O HUD vive no mundo: a energia da centelha é a própria luz do personagem. Zero poluição na tela.",
-        ],
-        media: [{ seed: "lumen-hud", ratio: "21/9" }],
-      },
-      {
-        id: "menus",
+        id: "paginas",
         layout: "media-grid",
-        eyebrow: "Menus & Interface",
-        heading: "Calma até nas pausas",
+        eyebrow: "Consistência",
+        heading: "A mesma lógica em todas as páginas",
         body: [
-          "Menus com transições suaves e tipografia delicada, mantendo a atmosfera mesmo fora da partida.",
+          "Cada página interna abre com uma imagem de destaque e organiza o texto em blocos curtos, com apoio visual à direita. Tipos de conteúdo diferentes, mesma estrutura de leitura — a identidade se mantém do começo ao fim da navegação.",
         ],
         media: [
-          { seed: "lumen-menu-1", ratio: "16/9" },
-          { seed: "lumen-menu-2", ratio: "16/9" },
+          {
+            seed: "assis-home-full",
+            src: "/cases/assis/assisholding_com.png",
+            alt: "Página inicial completa do site da Assis International Holding",
+            label: "Home",
+            ratio: "3/4",
+            fit: "contain",
+          },
+          {
+            seed: "assis-estrategia-full",
+            src: "/cases/assis/estrategiaefilosofia.png",
+            alt: "Página interna de Estratégia e Filosofia, com blocos de texto e imagens de apoio",
+            label: "Estratégia e Filosofia",
+            ratio: "3/4",
+            fit: "contain",
+          },
         ],
       },
       {
-        id: "concept",
-        layout: "media-grid",
-        eyebrow: "Concept Art",
-        heading: "Mundos de penumbra e brilho",
-        media: [
-          { seed: "lumen-concept-1", ratio: "4/3" },
-          { seed: "lumen-concept-2", ratio: "4/3" },
-          { seed: "lumen-concept-3", ratio: "4/3" },
-          { seed: "lumen-concept-4", ratio: "4/3" },
-        ],
-      },
-      {
-        id: "prototipos",
+        id: "linguagem",
         layout: "split",
-        eyebrow: "Protótipos",
-        heading: "Testar a sensação cedo",
+        eyebrow: "Linguagem visual",
+        heading: "Corporativa, sem excesso",
         body: [
-          "Protótipos jogáveis em poucas semanas validaram leitura, dificuldade e o \"feel\" da luz antes da produção.",
+          "A paleta saiu da própria marca: o azul-marinho como base institucional e o dourado reservado para detalhes — filetes, títulos de seção e destaques.",
+          "O resto é tipografia, espaçamento e hierarquia. Nenhum elemento decorativo disputa atenção com o conteúdo: a credibilidade vem da ordem, não do enfeite.",
         ],
-        media: [{ seed: "lumen-proto", ratio: "4/3" }],
+        media: [
+          {
+            seed: "assis-marca",
+            src: "/cases/assis/logotipo-plate.png",
+            alt: "Logotipo da Assis International Holding em azul-marinho e dourado",
+            ratio: "21/9",
+            fit: "contain",
+          },
+        ],
       },
       {
-        id: "resultados",
+        id: "implementacao",
+        layout: "text",
+        eyebrow: "Design e implementação",
+        heading: "Do layout ao site no ar",
+        body: [
+          "Além da concepção da interface, fiz a implementação. Desenhar e construir no mesmo projeto acelerou as decisões: dava para testar uma hierarquia direto no navegador em vez de supor.",
+          "Cada bloco foi pensado para formatos de conteúdo e resoluções diferentes, preservando no responsivo a hierarquia criada no design.",
+        ],
+      },
+      {
+        id: "fecho",
         layout: "quote",
         quote: {
-          text: "A interface some e você esquece que está jogando. Só sente.",
-          author: "Playtester, sessão de concept",
+          text: "Um site institucional não precisa mostrar tudo de uma vez. Precisa deixar claro onde está cada coisa.",
         },
-      },
-    ],
-  },
-
-  // 5 — Design System --------------------------------------------------------
-  {
-    slug: "constelacao-ds",
-    title: "Constelação DS",
-    client: "Grupo Norte",
-    category: "UI Design",
-    type: "design-system",
-    year: 2024,
-    summary:
-      "Design system multimarca que unificou cinco produtos sob uma única linguagem, sem perder identidade.",
-    intro:
-      "Cinco produtos, cinco times, um só DNA. Um sistema que acelera sem engessar.",
-    role: ["Design System Lead"],
-    services: ["Tokens", "Componentes", "Documentação", "Governança"],
-    cover: { seed: "constelacao-cover", ratio: "16/9", category: "UI Design" },
-    color: "#4b54c9",
-    blocks: [
-      {
-        id: "contexto",
-        layout: "split",
-        eyebrow: "Contexto",
-        heading: "Cinco produtos, zero consistência",
-        body: [
-          "Cada squad reinventava botões, cores e padrões. O resultado era retrabalho, inconsistência e uma marca diluída.",
-          "A meta: um sistema compartilhado que respeitasse a identidade de cada produto.",
-        ],
-        media: [{ seed: "constelacao-context", ratio: "4/3" }],
-      },
-      {
-        id: "principios",
-        layout: "list",
-        eyebrow: "Princípios",
-        heading: "As regras do jogo",
-        list: [
-          { title: "Acessível por padrão", description: "Contraste e foco garantidos em cada componente." },
-          { title: "Tema sem fork", description: "Multimarca via tokens, não via cópias de código." },
-          { title: "Documentação viva", description: "Quem usa, encontra e confia." },
-        ],
-      },
-      {
-        id: "fundacoes",
-        layout: "media-grid",
-        eyebrow: "Fundações · Tokens",
-        heading: "A base invisível",
-        body: [
-          "Tokens semânticos de cor, espaçamento, tipografia e raio, com camadas de tema por marca e por modo (claro/escuro).",
-        ],
-        media: [
-          { seed: "constelacao-token-1", ratio: "1/1" },
-          { seed: "constelacao-token-2", ratio: "1/1" },
-          { seed: "constelacao-token-3", ratio: "1/1" },
-        ],
-      },
-      {
-        id: "componentes",
-        layout: "media-grid",
-        eyebrow: "Componentes",
-        heading: "Biblioteca que escala",
-        body: [
-          "Mais de 60 componentes acessíveis, do átomo ao padrão, com variantes e estados documentados.",
-        ],
-        media: [
-          { seed: "constelacao-comp-1", ratio: "4/3" },
-          { seed: "constelacao-comp-2", ratio: "4/3" },
-          { seed: "constelacao-comp-3", ratio: "4/3" },
-          { seed: "constelacao-comp-4", ratio: "4/3" },
-        ],
-      },
-      {
-        id: "documentacao",
-        layout: "wide-media",
-        eyebrow: "Documentação & Governança",
-        heading: "Adoção começa na confiança",
-        body: [
-          "Portal de documentação com diretrizes de uso, do-and-don't e um processo claro de contribuição e versionamento.",
-        ],
-        media: [{ seed: "constelacao-docs", ratio: "21/9" }],
-      },
-      {
-        id: "resultados",
-        layout: "metrics",
-        metrics: [
-          { value: "-58%", label: "Tempo de entrega de telas" },
-          { value: "5", label: "Produtos unificados" },
-          { value: "100%", label: "Componentes acessíveis (WCAG AA)" },
-        ],
-      },
-    ],
-  },
-
-  // 6 — Produto Digital ------------------------------------------------------
-  {
-    slug: "fluxo",
-    title: "Fluxo",
-    client: "Fluxo (startup)",
-    category: "Identidade Visual",
-    type: "produto",
-    year: 2025,
-    summary:
-      "Do zero ao MVP: estratégia, marca e produto de uma ferramenta de foco para times remotos.",
-    intro:
-      "Uma startup com uma intuição e uma planilha. Saímos com marca, produto e os primeiros usuários apaixonados.",
-    role: ["Product Designer", "Estratégia", "Branding"],
-    services: ["Estratégia", "Discovery", "Branding", "UX/UI", "MVP"],
-    cover: { seed: "fluxo-cover", ratio: "16/9", category: "Identidade Visual" },
-    color: "#3f5d7a",
-    blocks: [
-      {
-        id: "contexto",
-        layout: "split",
-        eyebrow: "Contexto",
-        heading: "Foco virou artigo de luxo",
-        body: [
-          "Times remotos afogados em notificações. A Fluxo queria devolver às pessoas blocos de trabalho profundo.",
-          "Entrei como designer fundador de produto: da tese à primeira tela.",
-        ],
-        media: [{ seed: "fluxo-context", ratio: "4/3" }],
-      },
-      {
-        id: "problema",
-        layout: "text",
-        eyebrow: "Problema",
-        heading: "Ferramentas de foco que distraem",
-        body: [
-          "A ironia do mercado: apps de produtividade cheios de recursos que competem pela sua atenção. Apostamos no oposto, na simplicidade radical.",
-        ],
-      },
-      {
-        id: "estrategia",
-        layout: "list",
-        eyebrow: "Estratégia & Descoberta",
-        heading: "Apostas validadas cedo",
-        list: [
-          { title: "Sessões, não tarefas", description: "O produto organiza tempo, não listas infinitas." },
-          { title: "Ritmo do time", description: "Foco individual visível e respeitado pelo grupo." },
-          { title: "Silêncio como recurso", description: "Notificações pausam por padrão durante o foco." },
-        ],
-      },
-      {
-        id: "marca",
-        layout: "wide-media",
-        eyebrow: "Branding",
-        heading: "Uma identidade que acalma",
-        body: [
-          "Marca minimalista, com uma paleta sóbria e uma marca-símbolo que evoca uma onda, o estado de fluxo.",
-        ],
-        media: [{ seed: "fluxo-brand", ratio: "21/9" }],
-      },
-      {
-        id: "mvp",
-        layout: "media-grid",
-        eyebrow: "MVP",
-        heading: "O essencial, bem feito",
-        body: [
-          "Lançamos com três telas: iniciar sessão, foco e revisão. Cada uma polida ao detalhe, porque o MVP também é a marca.",
-        ],
-        media: [
-          { seed: "fluxo-mvp-1", ratio: "3/4" },
-          { seed: "fluxo-mvp-2", ratio: "3/4" },
-          { seed: "fluxo-mvp-3", ratio: "3/4" },
-        ],
-      },
-      {
-        id: "iteracoes",
-        layout: "split",
-        eyebrow: "Iterações",
-        heading: "Aprender com os primeiros usuários",
-        body: [
-          "Ciclos semanais com 30 early adopters guiaram cada decisão. O onboarding encolheu de 6 para 2 passos.",
-        ],
-        media: [{ seed: "fluxo-iter", ratio: "4/3" }],
-      },
-      {
-        id: "resultados",
-        layout: "metrics",
-        metrics: [
-          { value: "0→1", label: "Produto lançado em 14 semanas" },
-          { value: "1.200", label: "Usuários na lista de espera" },
-          { value: "63%", label: "Retenção semanal no beta" },
-        ],
       },
     ],
   },
@@ -1157,37 +809,13 @@ export function getNextProject(slug: string): Project {
 }
 
 /**
- * Itens da galeria flutuante do hero. Inclui os covers dos cases e algumas
- * peças extras para enriquecer a composição (mais de 6 itens).
+ * Itens da galeria flutuante do hero: os covers dos cases.
  */
-export const galleryItems: GalleryItem[] = [
-  ...projects.map((p) => ({
-    seed: p.cover.seed,
-    title: p.title,
-    category: p.category,
-    year: p.year,
-    description: p.summary,
-    src: p.card?.src,
-  })),
-  {
-    seed: "extra-identidade-aurora",
-    title: "Aurora",
-    category: "Identidade Visual",
-    year: 2022,
-    description: "Identidade fluida para um festival de arte digital.",
-  },
-  {
-    seed: "extra-ui-painel",
-    title: "Painel Vega",
-    category: "UI Design",
-    year: 2023,
-    description: "Dashboard de dados em tempo real para logística.",
-  },
-  {
-    seed: "extra-branding-horta",
-    title: "Horta Urbana",
-    category: "Branding",
-    year: 2022,
-    description: "Marca para uma rede de hortas comunitárias.",
-  },
-];
+export const galleryItems: GalleryItem[] = projects.map((p) => ({
+  seed: p.cover.seed,
+  title: p.title,
+  category: p.category,
+  year: p.year,
+  description: p.summary,
+  src: p.card?.src,
+}));

@@ -16,6 +16,8 @@ import { Media } from "@/components/placeholder/media";
  * Posições espalhadas (em %), profundidade do parallax e tamanho.
  * `mobile: true` marca as peças que aparecem também em telas pequenas
  * (cantos), evitando poluir o centro onde fica o texto.
+ * Só são usadas as primeiras posições, uma por item da galeria — por isso os
+ * cantos vêm primeiro: com poucos cases a composição segue equilibrada.
  */
 const layout = [
   { x: 4, y: 22, w: 240, depth: 1.4, ratio: "1/1" as const, mobile: true },
@@ -55,8 +57,8 @@ export function FloatingGallery() {
       className="pointer-events-none absolute inset-0"
       aria-hidden="true"
     >
-      {layout.map((pos, i) => {
-        const item = galleryItems[i % galleryItems.length];
+      {layout.slice(0, galleryItems.length).map((pos, i) => {
+        const item = galleryItems[i];
         return (
           <FloatingItem
             key={item.seed}

@@ -4,7 +4,7 @@ export const contact = {
   heading: "Vamos criar algo com propósito?",
   body: "Conte sobre sua ideia, sua marca ou seu produto. Respondo em até dois dias úteis.",
   whatsappLabel: "Chamar no WhatsApp",
-  whatsappMessage: "Olá Rafa! Vi seu portfólio e gostaria de conversar sobre um projeto.",
+  whatsappMessage: "Oi, vim pelo seu site.",
   form: {
     name: { label: "Nome", placeholder: "Como posso te chamar?" },
     email: { label: "E-mail", placeholder: "seu@email.com" },

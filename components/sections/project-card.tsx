@@ -14,7 +14,10 @@ import { readableOn } from "@/lib/utils";
 interface StackCardProps {
   project: Project;
   index: number;
+  /** Quantidade de projetos — só numera o card ("01 / 04"). */
   total: number;
+  /** Cards no deck (inclui o card de encerramento) — usado na geometria. */
+  stackSize: number;
   progress: MotionValue<number>;
 }
 
@@ -23,13 +26,13 @@ interface StackCardProps {
  * fica centralizado na tela e o seguinte desliza por cima enquanto o anterior
  * encolhe. O leve offset por índice cria o "empilhamento" visível no topo.
  */
-export function StackCard({ project, index, total, progress }: StackCardProps) {
+export function StackCard({ project, index, total, stackSize, progress }: StackCardProps) {
   const ink = readableOn(project.color);
   const muted = ink === "#0a0a0a" ? "rgba(10,10,10,0.62)" : "rgba(255,255,255,0.72)";
 
   // Card encolhe conforme os próximos sobem por cima dele.
-  const targetScale = 1 - (total - index) * 0.04;
-  const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
+  const targetScale = 1 - (stackSize - index) * 0.04;
+  const scale = useTransform(progress, [index / stackSize, 1], [1, targetScale]);
 
   return (
     <div className="sticky top-0 flex h-[100svh] items-center justify-center px-4 sm:px-6">
