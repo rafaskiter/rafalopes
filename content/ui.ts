@@ -46,6 +46,7 @@ export const ui = {
     close: "Fechar",
   },
   footer: {
+    heading: "Vamos conversar.",
     nav: "Navegação",
     navAria: "Navegação do rodapé",
     social: "Social",

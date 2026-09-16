@@ -45,6 +45,7 @@ export const ui: typeof PtUi = {
     close: "Close",
   },
   footer: {
+    heading: "Let's talk.",
     nav: "Navigation",
     navAria: "Footer navigation",
     social: "Social",

@@ -28,7 +28,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
             <div>
               <p className="font-display text-4xl tracking-tight sm:text-5xl">
-                Vamos conversar.
+                {ui.footer.heading}
               </p>
               <a
                 href={`mailto:${settings.email}`}
