@@ -15,7 +15,9 @@ export const settings = {
   whatsapp: "5511964675546",
   location: "Brasil · Remoto",
   /** URL pública — usada em metadados, canonical e sitemap. */
-  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://rafalopes-seven.vercel.app",
+  // Com www: o apex redireciona para cá na Vercel, então usar o apex faria
+  // cada canonical e cada URL do sitemap cair num redirecionamento.
+  url: process.env.NEXT_PUBLIC_APP_URL ?? "https://www.lopesrafa.com.br",
   /** Substituir pelos links reais quando disponíveis. */
   cvUrl: "/cv-rafa-lopes.pdf",
 } as const;
