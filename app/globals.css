@@ -14,7 +14,7 @@
   --ink-soft: #333333; /* parágrafos (cinza escuro) */
   --muted: #333333; /* parágrafos / texto secundário (cinza escuro) */
   --faint: #8a8a8a; /* metadados / labels pequenos */
-  --line: #e0e3d2; /* borda */
+  --line: #d3e0e2; /* borda — mesmo matiz do canvas, para não puxar amarelo */
   --accent: #ff5c8a; /* coral-pink (eyebrows / detalhes) */
   --acid: #c8ff00; /* verde-ácido (botões sobre fundo escuro) */
   --acid-hover: #b6ec00; /* hover do botão */
