@@ -1,10 +1,25 @@
+interface LogoOutlineProps {
+  className?: string;
+  /** Dimensões explícitas — o gerador da imagem de OG não lê classes CSS. */
+  width?: number;
+  height?: number;
+  stroke?: string;
+}
+
 /** Marca em outline (traço). Usa currentColor para acompanhar o contexto. */
-export function LogoOutline({ className }: { className?: string }) {
+export function LogoOutline({
+  className,
+  width,
+  height,
+  stroke = "currentColor",
+}: LogoOutlineProps) {
   return (
     <svg
       viewBox="0 0 1103.41 1026.39"
+      width={width}
+      height={height}
       fill="none"
-      stroke="currentColor"
+      stroke={stroke}
       strokeWidth={14}
       strokeMiterlimit={10}
       aria-hidden="true"

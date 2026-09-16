@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { settings, seo } from "@/content/settings";
+import { LogoOutline } from "@/components/icons/logo-outline";
 
 export const alt = seo.title;
 export const size = { width: 1200, height: 630 };
@@ -21,8 +22,21 @@ export default function OpengraphImage() {
           fontFamily: "ui-sans-serif, system-ui, sans-serif",
         }}
       >
-        <div style={{ fontSize: 28, letterSpacing: 4, textTransform: "uppercase", color: "#ff5c8a", fontWeight: 700 }}>
-          {settings.fullName}
+        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+          {/* Outline em branco: o fundo do card é escuro, a versão colorida
+              da marca é azul-escuro e sumiria nele. */}
+          <LogoOutline width={72} height={67} stroke="#f4f7ea" />
+          <div
+            style={{
+              fontSize: 28,
+              letterSpacing: 4,
+              textTransform: "uppercase",
+              color: "#ff5c8a",
+              fontWeight: 700,
+            }}
+          >
+            {settings.fullName}
+          </div>
         </div>
         <div style={{ fontSize: 140, lineHeight: 1, fontWeight: 700 }}>Olá :)</div>
         <div style={{ fontSize: 32, color: "#c9b5d2" }}>
