@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion, useTransform, type MotionValue } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
 interface SoonCardProps {
@@ -42,6 +43,19 @@ export function SoonCard({ index, stackSize, progress }: SoonCardProps) {
           </Link>
         </div>
       </motion.div>
+
+      {/* Fora do card, na folga entre ele e o fim da tela: este é o último
+          card do deck e ocupa a viewport inteira, então sem uma dica aqui o
+          site parece terminar. Escondido em telas baixas, onde o card chega
+          perto do rodapé e os dois se encostariam. */}
+      <motion.span
+        aria-hidden
+        className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 text-muted/40 [@media(min-height:720px)]:block"
+        animate={{ y: [0, 6, 0] }}
+        transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+      >
+        <ChevronDown className="size-7" strokeWidth={1} />
+      </motion.span>
     </div>
   );
 }

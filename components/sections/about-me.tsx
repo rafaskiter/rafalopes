@@ -9,6 +9,7 @@ import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { aboutMe, timeline, skills, tools, education, certifications } from "@/content/about";
 import { contact } from "@/content/contact";
 import { settings, socials } from "@/content/settings";
+import { cn } from "@/lib/utils";
 
 export function AboutMe() {
   const linkedin = socials.find((s) => s.label === "LinkedIn")?.href ?? "#";
@@ -39,7 +40,12 @@ export function AboutMe() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className={buttonVariants({ variant: "solid" })}
+                className={cn(
+                  buttonVariants({ variant: "solid" }),
+                  // Aqui o botão fica sobre o canvas claro, onde o ácido puro
+                  // não se separa do fundo. No rodapé, sobre o escuro, segue puro.
+                  "bg-acid-deep hover:bg-acid-deep-hover",
+                )}
               >
                 <WhatsAppIcon /> {contact.whatsappLabel}
               </a>

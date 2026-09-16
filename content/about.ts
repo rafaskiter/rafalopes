@@ -28,6 +28,20 @@ export const aboutMe = {
   photo: { seed: "rafa-lopes-portrait", label: "Rafa Lopes" },
 } as const;
 
+/**
+ * Marcas com quem trabalhei, exibidas na faixa acima de "Sobre mim".
+ * `height` é ajustado por logo: uma marca circular pesa mais que um
+ * logotipo horizontal na mesma altura, então equilibra opticamente.
+ */
+export const collabs = [
+  { name: "Volkswagen", src: "/collab/volkswagen.svg", height: 44 },
+  { name: "Porto Seguro", src: "/collab/porto-seguro.png", height: 26 },
+  { name: "CPFL Energia", src: "/collab/cpfl.svg", height: 46 },
+  { name: "Instituto de Pesquisas Eldorado", src: "/collab/eldorado.png", height: 38 },
+  { name: "Baterias Moura", src: "/collab/moura.svg", height: 30 },
+  { name: "TwoMate Design", src: "/collab/twomate.png", height: 46 },
+] as const;
+
 /** Experiência profissional (mais recente primeiro). */
 export const timeline: TimelineEntry[] = [
   {

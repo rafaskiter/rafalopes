@@ -5,7 +5,7 @@ import { projects } from "@/content/projects";
 
 export function Projects() {
   return (
-    <section id="projetos" className="relative">
+    <section id="projetos" className="relative bg-bg-elevated">
       {/* Textura de marca repetida no fundo da seção */}
       <div
         aria-hidden

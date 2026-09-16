@@ -6,7 +6,7 @@
  * Fontes: Corben (display) + Urbanist (texto).                         *
  * ------------------------------------------------------------------ */
 :root {
-  --bg: #f6f9e4; /* canvas (creme mais claro e menos saturado) */
+  --bg: #e4f6f9; /* canvas (azul-gelo claro) */
   --bg-elevated: #ffffff; /* surface */
   --surface: #fbfdef; /* cream claro */
   --ink: #100325; /* azul-escuro: títulos, bandas escuras */
@@ -16,8 +16,12 @@
   --faint: #8a8a8a; /* metadados / labels pequenos */
   --line: #e0e3d2; /* borda */
   --accent: #ff5c8a; /* coral-pink (eyebrows / detalhes) */
-  --acid: #c8ff00; /* verde-ácido (botões) */
+  --acid: #c8ff00; /* verde-ácido (botões sobre fundo escuro) */
   --acid-hover: #b6ec00; /* hover do botão */
+  /* O ácido puro quase some sobre os fundos claros (1,06:1). Versão
+     escurecida para quando o botão fica sobre o canvas. */
+  --acid-deep: #a0cc00;
+  --acid-deep-hover: #8fb800;
   --cyan: #00e5db;
   --blue-glow: #4da6ff; /* azul claro do gradiente do hero */
   --on-dark: #f4f7ea; /* texto sobre azul-escuro */
@@ -44,6 +48,8 @@
   --color-accent: var(--accent);
   --color-acid: var(--acid);
   --color-acid-hover: var(--acid-hover);
+  --color-acid-deep: var(--acid-deep);
+  --color-acid-deep-hover: var(--acid-deep-hover);
   --color-cyan: var(--cyan);
   --color-on-dark: var(--on-dark);
   --color-muted-on-dark: var(--muted-on-dark);
@@ -119,6 +125,47 @@
 
 .text-pretty {
   text-wrap: pretty;
+}
+
+/* Carrossel infinito de logos ----------------------------------------- *
+ * A trilha repete a lista 4x e desliza -25%, ou seja, exatamente uma    *
+ * cópia: ao reiniciar, a cópia seguinte está no lugar da anterior e o   *
+ * corte fica invisível. Precisa das 4 para que as 3 restantes cubram a  *
+ * viewport enquanto a primeira sai de cena.                             */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+.marquee-track {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+/* Pausa no hover para dar tempo de ler um logo específico. */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Esmaece as pontas para os logos não cortarem em seco na borda. */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
 }
 
 /* Respeita usuários que preferem menos movimento. */
