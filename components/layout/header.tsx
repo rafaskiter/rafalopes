@@ -3,13 +3,19 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { nav, settings } from "@/content/settings";
+import { LogoOutline } from "@/components/icons/logo-outline";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Só a home abre com hero escuro; as demais rotas começam no fundo claro.
+  const onDarkHero = pathname === "/" && !scrolled && !open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -42,14 +48,28 @@ export function Header() {
           onClick={() => setOpen(false)}
           aria-label={`${settings.fullName} — início`}
         >
-          <Image
-            src="/brand/logo.png"
-            alt={settings.fullName}
-            width={315}
-            height={320}
-            priority
-            className="h-10 w-10 object-contain"
-          />
+          {/* O wrapper sobrevive à troca das duas artes, então é ele que anima
+              o tamanho — uma transição no filho seria cortada pelo remount. */}
+          <span
+            className={cn(
+              "block transition-[width,height] duration-500 ease-[var(--ease-out)]",
+              // O outline pesa menos que a versão cheia e pede mais corpo.
+              onDarkHero ? "h-14 w-14" : "h-10 w-10",
+            )}
+          >
+            {onDarkHero ? (
+              <LogoOutline className="h-full w-full text-on-dark" />
+            ) : (
+              <Image
+                src="/brand/logo@2x.png"
+                alt={settings.fullName}
+                width={2179}
+                height={2026}
+                priority
+                className="h-full w-full object-contain"
+              />
+            )}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-9 md:flex" aria-label="Navegação principal">
@@ -57,10 +77,20 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="group relative text-sm text-ink/70 transition-colors hover:text-ink"
+              className={cn(
+                "group relative text-sm transition-colors",
+                onDarkHero
+                  ? "text-on-dark/75 hover:text-on-dark"
+                  : "text-ink/70 hover:text-ink",
+              )}
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-ink transition-all duration-300 group-hover:w-full" />
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full",
+                  onDarkHero ? "bg-on-dark" : "bg-ink",
+                )}
+              />
             </Link>
           ))}
         </nav>
@@ -72,10 +102,10 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Menu</span>
-          <div className="flex w-6 flex-col gap-[5px]">
-            <span className={cn("h-px bg-ink transition-transform duration-300", open && "translate-y-[6px] rotate-45")} />
-            <span className={cn("h-px bg-ink transition-opacity duration-300", open && "opacity-0")} />
-            <span className={cn("h-px bg-ink transition-transform duration-300", open && "-translate-y-[6px] -rotate-45")} />
+          <div className={cn("flex w-6 flex-col gap-[5px]", onDarkHero ? "text-on-dark" : "text-ink")}>
+            <span className={cn("h-px bg-current transition-transform duration-300", open && "translate-y-[6px] rotate-45")} />
+            <span className={cn("h-px bg-current transition-opacity duration-300", open && "opacity-0")} />
+            <span className={cn("h-px bg-current transition-transform duration-300", open && "-translate-y-[6px] -rotate-45")} />
           </div>
         </button>
         </div>
